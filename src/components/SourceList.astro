@@ -2,7 +2,13 @@
 import sources from '../data/sources.json';
 const { ids = [] } = Astro.props;
 const map = new Map((sources as any[]).map(s => [s.id, s]));
-const used = ids.map((n: number) => map.get(n)).filter(Boolean);
+// Several citation IDs in the source research map to the same document.
+// Deduplicate by URL so the register reads as a list of sources, not repeats.
+const seen = new Set<string>();
+const used = ids
+  .map((n: number) => map.get(n))
+  .filter(Boolean)
+  .filter((s: any) => { if (seen.has(s.url)) return false; seen.add(s.url); return true; });
 ---
 {used.length > 0 && (
   <section class="sources" id="sources">

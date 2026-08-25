@@ -19,22 +19,60 @@
     "submitText": "Request current information"
   },
   "colours": {
-    "primary": "#0b3b6f",
-    "primaryDark": "#072a50",
-    "accent": "#c2410c",
-    "background": "#ffffff",
-    "surface": "#f6f8fb",
-    "border": "#dfe6ef",
-    "text": "#0f172a",
-    "muted": "#4a5b70",
-    "ok": "#0f766e",
-    "warn": "#b45309",
-    "gone": "#b91c1c"
+    "primary": "#702573",
+    "primaryDark": "#501A52",
+    "primaryLight": "#E3BEE4",
+    "ink": "#17253D",
+    "link": "#0067B8",
+    "background": "#FEFEFE",
+    "surface": "#F6F1EE",
+    "surfaceAlt": "#F2F2F2",
+    "border": "#E2DAD5",
+    "text": "#17253D",
+    "muted": "#616161",
+    "ok": "#0F6C4D",
+    "warn": "#8A5A00",
+    "gone": "#A4262C"
   },
   "hubs": [
-    { "slug": "product", "title": "Product & Licensing", "blurb": "What Dragon Copilot is, how it is licensed, and how the options differ." },
-    { "slug": "australia", "title": "Australia", "blurb": "Availability, data residency, EMR integration and the Australian health sector picture." },
-    { "slug": "compliance", "title": "Privacy & Compliance", "blurb": "Data handling, retention, consent, security and regulatory status." },
-    { "slug": "evidence", "title": "Evidence & Comparisons", "blurb": "What the published independent studies show, and how alternatives compare." }
-  ]
+    {
+      "slug": "product",
+      "title": "Product & Licensing",
+      "blurb": "What Dragon Copilot is, how it is licensed, and how the options differ.",
+      "image": "dragoncopilot/2026/08/25/dragon-copilot-licensing-practice-manager-paperwork-review-1ae88dd1.jpg",
+      "imageAlt": "A practice manager and a colleague reviewing a printed licensing plan at a desk"
+    },
+    {
+      "slug": "australia",
+      "title": "Australia",
+      "blurb": "Availability, data residency, EMR integration and the Australian health sector picture.",
+      "image": "dragoncopilot/2026/08/25/dragon-copilot-australia-gp-practice-team-consultation-651425ed.jpg",
+      "imageAlt": "An Australian GP and practice manager reviewing a printed list at a clinic reception"
+    },
+    {
+      "slug": "compliance",
+      "title": "Privacy & Compliance",
+      "blurb": "Data handling, retention, consent, security and regulatory status.",
+      "image": "dragoncopilot/2026/08/25/dragon-copilot-privacy-consent-doctor-patient-conversation-a915b013.jpg",
+      "imageAlt": "A doctor talking with an older patient across a consulting room desk"
+    },
+    {
+      "slug": "evidence",
+      "title": "Evidence & Comparisons",
+      "blurb": "What the published independent studies show, and how alternatives compare.",
+      "image": "dragoncopilot/2026/08/25/dragon-copilot-evidence-researchers-reviewing-printed-studie-2831d123.jpg",
+      "imageAlt": "Two clinical researchers reviewing printed studies spread across a table"
+    }
+  ],
+  "legal": {
+    "entity": "Voice Recognition Australia",
+    "resellerLine": "Voice Recognition Australia is a registered authorised reseller of Dragon products in Australia.",
+    "disclaimer": "This website is operated by Voice Recognition Australia. It is not operated by, endorsed by, affiliated with, or sponsored by Microsoft Corporation or any of its subsidiaries. Microsoft, Dragon, Dragon Copilot, Dragon Medical One, DAX and Nuance are trademarks or registered trademarks of Microsoft Corporation in the United States and other countries. All product names, logos and brands are the property of their respective owners and are used on this site for identification and reference purposes only. Such use does not imply any affiliation with or endorsement by the trademark owner.",
+    "editorial": "Information on this site is compiled from published vendor, regulatory and peer-reviewed sources and carries a verification date on every page. Product capability, availability, licensing terms and pricing may change without notice. Nothing on this site constitutes clinical, legal, financial or procurement advice. Verify current details with the vendor or with Voice Recognition Australia before making a purchasing decision."
+  },
+  "r2Base": "https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev",
+  "heroImage": "dragoncopilot/2026/08/25/dragon-copilot-australia-clinician-consulting-room-hero-cbbc0a47.jpg",
+  "heroImageAlt": "An Australian doctor smiling and speaking while wearing a headset microphone at a consulting room desk",
+  "sectorImage": "dragoncopilot/2026/08/25/dragon-copilot-hospital-clinicians-corridor-consultation-04b078d6.jpg",
+  "sectorImageAlt": "Three hospital clinicians walking and talking together in a bright hospital atrium"
 }

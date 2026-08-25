@@ -10,8 +10,16 @@ const { entry, headings = [] } = Astro.props;
 const d = entry.data;
 const hub = site.hubs.find((h: any) => h.slug === d.hub);
 
-const siblings = (await getCollection('docs', (e: any) => !e.data.draft && e.data.hub === d.hub))
+const allDocs = await getCollection('docs', (e: any) => !e.data.draft);
+const siblings = allDocs
+  .filter((e: any) => e.data.hub === d.hub)
   .sort((a: any, b: any) => a.data.order - b.data.order);
+
+// Resolve related slugs to real published entries. A related entry pointing at a
+// page that does not exist yet is silently dropped rather than rendered as a dead link.
+const relatedPages = d.related
+  .map((slug: string) => allDocs.find((e: any) => e.slug === slug))
+  .filter(Boolean);
 
 const pageUrl = new URL(`/${entry.slug}/`, site.domain).href;
 
@@ -93,10 +101,12 @@ if (qa.length) {
         </section>
       )}
 
-      {d.related.length > 0 && (
+      {relatedPages.length > 0 && (
         <section>
           <h2>Related pages</h2>
-          <ul>{d.related.map((r: string) => <li><a href={`/${r}/`}>{r.split('/').pop()?.replace(/-/g,' ')}</a></li>)}</ul>
+          <ul>{relatedPages.map((r: any) => (
+            <li><a href={`/${r.slug}/`}>{r.data.question}</a></li>
+          ))}</ul>
         </section>
       )}
 

@@ -1,40 +1,49 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AnswerBlock from '../components/AnswerBlock.astro';
+import R2Image from '../components/R2Image.astro';
 import site from '../site.config.json';
 import { getCollection } from 'astro:content';
-const docs = await getCollection('docs', (e: any) => !e.data.draft);
+const docs = (await getCollection('docs', (e: any) => !e.data.draft))
+  .sort((a: any, b: any) => a.data.order - b.data.order);
 ---
 <BaseLayout title={`${site.siteName} — Microsoft Dragon Copilot reference guide`}
   description="An independent Australian reference guide to Microsoft Dragon Copilot and Dragon Medical One: licensing options, EMR integration, data residency, consent and the published evidence.">
-  <div class="wrap" style="padding-top:32px;padding-bottom:56px">
-    <h1>Microsoft Dragon Copilot, explained for Australian healthcare</h1>
-    <AnswerBlock question="What is this site?">
-      This is an independent Australian reference guide to Microsoft Dragon Copilot and Dragon Medical One,
-      published by {site.publisher.name}, an authorised Australian reseller. Every claim is dated and
-      sourced to primary documentation, so you can see what Microsoft actually says — and what is still unresolved.
-    </AnswerBlock>
+  <div class="wrap">
+    <section class="hero">
+      <div>
+        <h1>Microsoft Dragon Copilot, explained for Australian healthcare</h1>
+        <AnswerBlock>
+          An independent Australian reference guide to Microsoft Dragon Copilot and Dragon Medical One,
+          published by {site.publisher.name}, a registered authorised reseller. Every claim carries a
+          verification date and a primary source, so you can see what Microsoft actually says — and
+          what is still unresolved.
+        </AnswerBlock>
+      </div>
+      <R2Image src={site.heroImage} alt={site.heroImageAlt} ratio="16 / 9" eager={true} />
+    </section>
 
     <div class="hubgrid">
       {site.hubs.map((h: any) => (
         <div class="hubcard">
+          {h.image && <div class="hubcard__img"><R2Image src={h.image} alt={h.imageAlt} /></div>}
           <h3><a href={`/${h.slug}/`}>{h.title}</a></h3>
           <p>{h.blurb}</p>
         </div>
       ))}
+      <div class="hubcard">
+        <div class="hubcard__img"><R2Image src={site.sectorImage} alt={site.sectorImageAlt} /></div>
+        <h3><a href="/sector/">Government &amp; hospitals</a></h3>
+        <p>How Australian health departments and hospital networks actually procure clinical speech recognition.</p>
+      </div>
       <div class="hubcard">
         <h3><a href="/emr/">Australian EMR integration</a></h3>
         <p>System-by-system integration status across Australian clinical and practice management software.</p>
       </div>
     </div>
 
-    {docs.length > 0 && (
-      <>
-        <h2>All pages</h2>
-        <ul>{docs.sort((a:any,b:any)=>a.data.order-b.data.order).map((d: any) => (
-          <li><a href={`/${d.slug}/`}>{d.data.question}</a></li>
-        ))}</ul>
-      </>
-    )}
+    <h2>All pages</h2>
+    <ul>{docs.map((d: any) => <li><a href={`/${d.slug}/`}>{d.data.question}</a></li>)}</ul>
+    <p style="padding-bottom:40px"></p>
   </div>
 </BaseLayout>

@@ -1,0 +1,13 @@
+---
+import site from '../site.config.json';
+const { src, alt, ratio = '21 / 9', eager = false, rounded = true } = Astro.props;
+const base = import.meta.env.PUBLIC_R2_BASE || site.r2Base;
+const url = src.startsWith('http') ? src : `${base}/${src}`;
+---
+<figure class="r2img" style={`--ar:${ratio}`}>
+  <img src={url} alt={alt}
+       loading={eager ? 'eager' : 'lazy'}
+       decoding={eager ? 'sync' : 'async'}
+       fetchpriority={eager ? 'high' : 'auto'}
+       style={rounded ? '' : 'border-radius:0'} />
+</figure>

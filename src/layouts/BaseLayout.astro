@@ -71,15 +71,19 @@ const graph = [
         <a href="/enquiry/">Enquiry</a>
       </nav>
     </div>
+    <div class="masthead__rule"></div>
   </header>
 
   <slot />
 
   <footer class="foot">
     <div class="wrap">
-      <p><strong>{site.publisher.name}</strong> — {site.publisher.role}. {site.tagline}.</p>
-      <p class="foot__notice">{site.editorialNotice}</p>
-      <p class="foot__notice">{site.affiliationNotice}</p>
+      <p><strong>{site.publisher.name}</strong> — {site.tagline}.</p>
+      <div class="legal">
+        <p><strong>{site.legal.resellerLine}</strong></p>
+        <p>{site.legal.disclaimer}</p>
+        <p>{site.legal.editorial}</p>
+      </div>
     </div>
   </footer>
 </body>
