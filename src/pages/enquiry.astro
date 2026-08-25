@@ -4,6 +4,7 @@ import AnswerBlock from '../components/AnswerBlock.astro';
 import ACForm from '../components/ACForm.astro';
 import site from '../site.config.json';
 const c = site.colours;
+const formReady = site.form.formId !== 'CHANGE_ME';
 ---
 <BaseLayout title={`Request current Dragon Copilot information | ${site.siteName}`}
   description="Ask Voice Recognition Australia for current Dragon Copilot and Dragon Medical One availability, licensing options and EMR integration information for your organisation.">
@@ -24,8 +25,21 @@ const c = site.colours;
       <li>Any data residency or procurement requirements</li>
     </ul>
 
-    <div style={`background:${c.primaryDark};border-radius:6px;padding:26px;margin-top:28px`}>
-      <ACForm />
+    <div style={`background:${c.primaryDark};border-radius:8px;padding:26px;margin-top:28px`}>
+      {formReady ? <ACForm /> : (
+        <div style="color:#fff">
+          <div style="font-weight:700;font-size:20px;margin-bottom:6px">Get in touch</div>
+          <p style="font-size:15px;opacity:.85;margin:0 0 18px;max-width:none">
+            Voice Recognition Australia has supplied and supported Dragon speech recognition to Australian
+            healthcare for over two decades. Contact the team for current availability, licensing options
+            and integration advice for your clinical system.
+          </p>
+          <a href="https://www.voicerecognition.com.au"
+             style={`display:inline-block;background:#fff;color:${c.primaryDark};font-weight:600;padding:12px 22px;border-radius:4px;text-decoration:none`}>
+            Contact Voice Recognition Australia
+          </a>
+        </div>
+      )}
     </div>
   </div>
 </BaseLayout>
