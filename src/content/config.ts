@@ -44,6 +44,10 @@ const docs = defineCollection({
     faqs: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
     sources: z.array(z.number()).default([]),
     related: z.array(z.string()).default([]),
+    /** Network interlink rules: 1-3 internal, 1-2 external per page.
+     *  Every body hyperlink MUST also appear here — see .claude/INTERLINK-RULES.md. */
+    internalLinks: z.array(z.object({ to: z.string(), anchor: z.string() })).default([]),
+    externalLinks: z.array(z.object({ to: z.string(), anchor: z.string(), url: z.string() })).default([]),
     order: z.number().default(100),
     draft: z.boolean().default(false)
   })

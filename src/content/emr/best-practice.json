@@ -2,8 +2,15 @@
   "name": "Best Practice",
   "vendor": "Best Practice Software",
   "slug": "best-practice",
-  "aliases": ["Bp Premier", "Bp Omni", "BP"],
-  "segment": ["general-practice", "specialist"],
+  "aliases": [
+    "Bp Premier",
+    "Bp Omni",
+    "BP"
+  ],
+  "segment": [
+    "general-practice",
+    "specialist"
+  ],
   "hosting": "hybrid",
   "marketNote": "One of the two dominant Australian general practice clinical systems. Bp Premier is the established Windows product; Bp Omni is the cloud successor.",
   "dragonCopilot": {
@@ -15,10 +22,12 @@
     "sources": []
   },
   "dragonMedicalOne": {
-    "status": "unknown",
-    "note": "[VERIFY] Verify current status directly before publishing.",
-    "grade": "unverified",
-    "sources": []
+    "status": "native",
+    "note": "Voice Recognition Australia, an authorised Australian reseller, states that Dragon Medical One dictates directly into this system. This is a reseller statement rather than Microsoft documentation, so it is graded medium and should be confirmed for a specific site configuration.",
+    "grade": "medium",
+    "sources": [
+      158
+    ]
   },
   "verified": "2026-08-25"
 }

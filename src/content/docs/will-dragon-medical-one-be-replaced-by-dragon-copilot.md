@@ -16,6 +16,13 @@ faqs:
   - q: "What should an existing Dragon Medical One site do about this?"
     a: "Plan on the published position rather than on speculation, and put the question directly to your reseller or Microsoft contact at renewal. Terms and roadmap detail that is not public is frequently available under a customer conversation."
 sources: [1, 12, 14, 125, 156]
+internalLinks:
+  - to: "/dragon-copilot-vs-dragon-medical-one/"
+    anchor: "what Dragon Copilot adds over Dragon Medical One"
+externalLinks:
+  - to: "voicerecognition.com.au"
+    anchor: "authorised Dragon reseller Australia"
+    url: "https://www.voicerecognition.com.au/pages/dragon-medical-one"
 related: ["dragon-copilot-vs-dragon-medical-one", "is-dragon-medical-one-available-in-australia"]
 ---
 
@@ -56,3 +63,10 @@ Renewal conversations are where the useful information lives. Roadmap detail, mi
 transition arrangements are routinely discussed with customers well before anything is published.
 An organisation with a material number of seats has more leverage in that conversation than the
 public documentation suggests.
+
+In Australia that conversation happens through the channel rather than with Microsoft directly, so
+an [authorised Dragon reseller Australia](https://www.voicerecognition.com.au/pages/dragon-medical-one)
+is usually the party who can tell you where a given site actually stands at renewal. If what you are
+really trying to work out is whether the newer product is worth moving to,
+[what Dragon Copilot adds over Dragon Medical One](/dragon-copilot-vs-dragon-medical-one/) sets out
+the capability difference.

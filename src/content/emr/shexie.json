@@ -1,23 +1,21 @@
 {
-  "name": "MedicalDirector",
-  "vendor": "Telstra Health",
-  "slug": "medical-director",
+  "name": "Shexie",
+  "vendor": "Shexie",
+  "slug": "shexie",
   "aliases": [
-    "MD",
-    "MedicalDirector Clinical",
-    "Pracsoft"
+    "Shexie Platinum"
   ],
   "segment": [
-    "general-practice",
-    "specialist"
+    "specialist",
+    "general-practice"
   ],
-  "hosting": "on-premise",
-  "marketNote": "The other long-established Australian general practice clinical system, now owned by Telstra Health. Helix is its cloud-native sibling product.",
+  "hosting": "hybrid",
+  "marketNote": "Australian medical practice management software used across specialist and general practice.",
   "dragonCopilot": {
     "status": "unknown",
     "ambient": "unknown",
     "dictation": "unknown",
-    "note": "[VERIFY] No public Microsoft documentation located as at 25 August 2026.",
+    "note": "[VERIFY] No public Microsoft documentation of a Dragon Copilot integration located as at 25 August 2026.",
     "grade": "unverified",
     "sources": []
   },

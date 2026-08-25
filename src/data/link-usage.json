@@ -8,7 +8,7 @@
   },
   "external": {
     "coverage": {
-      "voicerecognition.com.au": 0,
+      "voicerecognition.com.au": 3,
       "pdfsoftware.com.au": 0,
       "dragonprofessional16.com.au": 0,
       "dragonnaturallyspeaking.com.au": 0,
@@ -17,7 +17,11 @@
       "cloudprinting.au": 0
     },
     "anchorsUsed": {
-      "voicerecognition.com.au": [],
+      "voicerecognition.com.au": [
+        "buy Dragon Medical One in Australia",
+        "Dragon Medical One reseller Australia",
+        "authorised Dragon reseller Australia"
+      ],
       "pdfsoftware.com.au": [],
       "dragonprofessional16.com.au": [],
       "dragonnaturallyspeaking.com.au": [],
@@ -25,6 +29,25 @@
       "speechrecognition.cloud": [],
       "cloudprinting.au": []
     },
-    "log": []
+    "log": [
+      {
+        "page": "/is-dragon-medical-one-available-in-australia/",
+        "to": "voicerecognition.com.au",
+        "anchor": "buy Dragon Medical One in Australia",
+        "date": "2026-08-25"
+      },
+      {
+        "page": "/dragon-copilot-vs-dragon-medical-one/",
+        "to": "voicerecognition.com.au",
+        "anchor": "Dragon Medical One reseller Australia",
+        "date": "2026-08-25"
+      },
+      {
+        "page": "/will-dragon-medical-one-be-replaced-by-dragon-copilot/",
+        "to": "voicerecognition.com.au",
+        "anchor": "authorised Dragon reseller Australia",
+        "date": "2026-08-25"
+      }
+    ]
   }
 }

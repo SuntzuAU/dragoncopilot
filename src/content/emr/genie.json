@@ -2,8 +2,13 @@
   "name": "Genie",
   "vendor": "Genie Solutions",
   "slug": "genie",
-  "aliases": ["Genie Solutions"],
-  "segment": ["specialist", "day-surgery"],
+  "aliases": [
+    "Genie Solutions"
+  ],
+  "segment": [
+    "specialist",
+    "day-surgery"
+  ],
   "hosting": "on-premise",
   "marketNote": "The dominant Australian specialist practice management system, particularly in surgical and procedural specialties. Gentu is its cloud sibling.",
   "dragonCopilot": {
@@ -15,10 +20,12 @@
     "sources": []
   },
   "dragonMedicalOne": {
-    "status": "unknown",
-    "note": "[VERIFY]",
-    "grade": "unverified",
-    "sources": []
+    "status": "native",
+    "note": "Voice Recognition Australia, an authorised Australian reseller, states that Dragon Medical One dictates directly into this system. This is a reseller statement rather than Microsoft documentation, so it is graded medium and should be confirmed for a specific site configuration.",
+    "grade": "medium",
+    "sources": [
+      158
+    ]
   },
   "verified": "2026-08-25"
 }

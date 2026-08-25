@@ -16,6 +16,13 @@ faqs:
   - q: "Which one should an Australian practice be looking at?"
     a: "As at 25 August 2026 the question is partly settled by availability rather than preference: Dragon Medical One is commercially available in Australia and Dragon Copilot has no confirmed Australian general availability. That may change, and the comparison below is what matters when it does."
 sources: [1, 12, 14, 125, 126, 156]
+internalLinks:
+  - to: "/is-dragon-medical-one-available-in-australia/"
+    anchor: "Dragon Medical One's Australian availability"
+externalLinks:
+  - to: "voicerecognition.com.au"
+    anchor: "Dragon Medical One reseller Australia"
+    url: "https://www.voicerecognition.com.au/pages/dragon-medical-one"
 related: ["is-dragon-medical-one-available-in-australia", "what-is-dragon-flex"]
 ---
 
@@ -55,6 +62,18 @@ Dragon Medical One for dictation, and DAX Copilot for ambient clinical documenta
 that lineage explains most of the confusion in the market — including why some material describes
 Dragon Copilot as a scribe and other material describes it as dictation software. It is both,
 because it was assembled from both.
+
+## Which question you are actually asking
+
+If the question is "which is the better product", the honest answer is that they do different
+things and the comparison depends entirely on whether ambient documentation suits how you consult.
+
+If the question is "which can I have", the answer in Australia is currently more clear-cut.
+[Dragon Medical One's Australian availability](/is-dragon-medical-one-available-in-australia/) is
+established, and it is bought here through an authorised
+[Dragon Medical One reseller Australia](https://www.voicerecognition.com.au/pages/dragon-medical-one)
+rather than direct from Microsoft. Dragon Copilot has no confirmed Australian general availability
+as at 25 August 2026.
 
 <aside class="callout">
 <p><strong>Dragon Medical One has not been announced as end of life.</strong> Microsoft positioning

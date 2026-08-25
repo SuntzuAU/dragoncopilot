@@ -16,6 +16,13 @@ faqs:
   - q: "How is Dragon Medical One bought in Australia?"
     a: "Through authorised resellers rather than as a shelf product. Licensing is a recurring clinician subscription, and deployment usually involves the clinical system, the dictation hardware and the network path, so most organisations buy it alongside implementation support."
 sources: [14, 156, 157]
+internalLinks:
+  - to: "/dragon-copilot-vs-dragon-medical-one/"
+    anchor: "how the two products actually differ"
+externalLinks:
+  - to: "voicerecognition.com.au"
+    anchor: "buy Dragon Medical One in Australia"
+    url: "https://www.voicerecognition.com.au/pages/dragon-medical-one"
 related: ["dragon-copilot-vs-dragon-medical-one", "what-is-dragon-flex"]
 ---
 
@@ -61,6 +68,18 @@ than an oversight.
 </tbody>
 </table>
 </div>
+
+## Buying it in Australia
+
+Dragon Medical One is not a shelf product. It is sold through authorised Australian resellers who
+handle licensing, the clinical system configuration, dictation hardware and clinician onboarding
+together, because in practice those things fail or succeed as one piece of work. Clinicians and
+practice managers who want to [buy Dragon Medical One in Australia](https://www.voicerecognition.com.au/pages/dragon-medical-one)
+can do so today, which remains the sharpest practical difference between the two products in this
+market.
+
+If you are weighing the two up rather than checking availability,
+[how the two products actually differ](/dragon-copilot-vs-dragon-medical-one/) is the more useful page.
 
 <aside class="callout callout--warn">
 <p><strong>Availability changes.</strong> Microsoft has expanded Dragon Copilot's geography several
