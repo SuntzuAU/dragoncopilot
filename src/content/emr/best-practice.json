@@ -1,0 +1,24 @@
+{
+  "name": "Best Practice",
+  "vendor": "Best Practice Software",
+  "slug": "best-practice",
+  "aliases": ["Bp Premier", "Bp Omni", "BP"],
+  "segment": ["general-practice", "specialist"],
+  "hosting": "hybrid",
+  "marketNote": "One of the two dominant Australian general practice clinical systems. Bp Premier is the established Windows product; Bp Omni is the cloud successor.",
+  "dragonCopilot": {
+    "status": "unknown",
+    "ambient": "unknown",
+    "dictation": "unknown",
+    "note": "RESEARCH PENDING. No public Microsoft documentation of a Dragon Copilot integration with Best Practice was located in the 25 August 2026 research. Do not publish a status until verified against a primary source.",
+    "grade": "unverified",
+    "sources": []
+  },
+  "dragonMedicalOne": {
+    "status": "unknown",
+    "note": "RESEARCH PENDING. Verify current status directly before publishing.",
+    "grade": "unverified",
+    "sources": []
+  },
+  "verified": "2026-08-25"
+}

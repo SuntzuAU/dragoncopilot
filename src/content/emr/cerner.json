@@ -1,0 +1,24 @@
+{
+  "name": "Oracle Health (Cerner)",
+  "vendor": "Oracle",
+  "slug": "cerner",
+  "aliases": ["Cerner", "Cerner Millennium", "Oracle Health Millennium"],
+  "segment": ["hospital"],
+  "hosting": "hybrid",
+  "marketNote": "Major hospital EMR with significant Australian public hospital deployment, including large state health installations.",
+  "dragonCopilot": {
+    "status": "unknown",
+    "ambient": "unknown",
+    "dictation": "unknown",
+    "note": "RESEARCH PENDING. Microsoft's public integration documentation is markedly deeper for Epic than for other hospital EMRs. Do not infer parity.",
+    "grade": "unverified",
+    "sources": []
+  },
+  "dragonMedicalOne": {
+    "status": "unknown",
+    "note": "RESEARCH PENDING.",
+    "grade": "unverified",
+    "sources": []
+  },
+  "verified": "2026-08-25"
+}

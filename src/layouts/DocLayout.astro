@@ -1,0 +1,117 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import SourceList from '../components/SourceList.astro';
+import AnswerBlock from '../components/AnswerBlock.astro';
+import site from '../site.config.json';
+import { getCollection } from 'astro:content';
+
+const { entry, headings = [] } = Astro.props;
+const d = entry.data;
+const hub = site.hubs.find((h: any) => h.slug === d.hub);
+
+const siblings = (await getCollection('docs', (e: any) => !e.data.draft && e.data.hub === d.hub))
+  .sort((a: any, b: any) => a.data.order - b.data.order);
+
+const pageUrl = new URL(`/${entry.slug}/`, site.domain).href;
+
+const trail = [
+  { label: 'Home', href: '/' },
+  { label: hub?.title ?? d.hub, href: `/${d.hub}/` },
+  { label: d.title }
+];
+
+const schema: any[] = [
+  {
+    "@type": "Article",
+    "@id": `${pageUrl}#article`,
+    headline: d.question,
+    description: d.metaDescription,
+    inLanguage: "en-AU",
+    dateModified: d.verified,
+    datePublished: d.verified,
+    publisher: { "@id": `${site.domain}/#publisher` },
+    isPartOf: { "@id": `${site.domain}/#website` },
+    about: d.primaryKeyword,
+    keywords: [d.primaryKeyword, ...d.secondaryKeywords].join(', ')
+  },
+  {
+    "@type": "BreadcrumbList",
+    itemListElement: trail.map((t, i) => ({
+      "@type": "ListItem", position: i + 1, name: t.label,
+      ...(t.href ? { item: new URL(t.href, site.domain).href } : {})
+    }))
+  }
+];
+
+// The headline question and every FAQ pair become one FAQPage node.
+const qa = [{ q: d.question, a: d.answer }, ...d.faqs];
+if (qa.length) {
+  schema.push({
+    "@type": "FAQPage",
+    "@id": `${pageUrl}#faq`,
+    mainEntity: qa.map((f: any) => ({
+      "@type": "Question", name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a }
+    }))
+  });
+}
+---
+<BaseLayout title={`${d.title} | ${site.siteName}`} description={d.metaDescription} canonical={pageUrl} schema={schema}>
+  <div class="shell">
+    <nav class="sidenav" aria-label={`${hub?.title} pages`}>
+      <h2>{hub?.title}</h2>
+      <ul>
+        {siblings.map((s: any) => (
+          <li><a href={`/${s.slug}/`} aria-current={s.slug === entry.slug ? 'page' : undefined}>{s.data.title}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <main>
+      <Breadcrumbs trail={trail} />
+      <h1>{d.question}</h1>
+
+      <div class="stamp">
+        <span><b>Last verified</b> {new Date(d.verified).toLocaleDateString('en-AU', { day:'numeric', month:'long', year:'numeric' })}</span>
+        <span><b>Published by</b> {site.publisher.name}, {site.publisher.role}</span>
+      </div>
+
+      <AnswerBlock>{d.answer}</AnswerBlock>
+
+      <slot />
+
+      {d.faqs.length > 0 && (
+        <section id="faq">
+          <h2>Common questions</h2>
+          {d.faqs.map((f: any) => (
+            <>
+              <h3>{f.q}</h3>
+              <AnswerBlock>{f.a}</AnswerBlock>
+            </>
+          ))}
+        </section>
+      )}
+
+      {d.related.length > 0 && (
+        <section>
+          <h2>Related pages</h2>
+          <ul>{d.related.map((r: string) => <li><a href={`/${r}/`}>{r.split('/').pop()?.replace(/-/g,' ')}</a></li>)}</ul>
+        </section>
+      )}
+
+      <SourceList ids={d.sources} />
+    </main>
+
+    <nav class="toc" aria-label="On this page">
+      <h2>On this page</h2>
+      <ul>
+        {headings.filter((h: any) => h.depth === 2).map((h: any) => (
+          <li><a href={`#${h.slug}`}>{h.text}</a></li>
+        ))}
+        {d.faqs.length > 0 && <li><a href="#faq">Common questions</a></li>}
+        {d.sources.length > 0 && <li><a href="#sources">Sources</a></li>}
+      </ul>
+    </nav>
+  </div>
+</BaseLayout>

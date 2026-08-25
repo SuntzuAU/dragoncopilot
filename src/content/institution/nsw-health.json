@@ -1,0 +1,18 @@
+{
+  "name": "NSW Health",
+  "slug": "nsw-health",
+  "type": "state-health",
+  "jurisdiction": "New South Wales",
+  "scale": "Largest state health system in Australia; multiple local health districts.",
+  "emrPlatforms": [
+    "Cerner",
+    "Epic"
+  ],
+  "procurementRoute": "eHealth NSW state-wide procurement and panel arrangements",
+  "speechFootprint": {
+    "note": "RESEARCH PENDING. Do not publish any claim about this organisation's speech recognition or ambient AI deployment without a primary source. Named-customer claims are the highest-risk content on this site.",
+    "grade": "unverified",
+    "sources": []
+  },
+  "verified": "2026-08-25"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "WA Health",
+  "slug": "wa-health",
+  "type": "state-health",
+  "jurisdiction": "Western Australia",
+  "scale": "State-wide health service providers.",
+  "emrPlatforms": [
+    "Cerner"
+  ],
+  "procurementRoute": "Health Support Services procurement",
+  "speechFootprint": {
+    "note": "RESEARCH PENDING. Do not publish any claim about this organisation's speech recognition or ambient AI deployment without a primary source. Named-customer claims are the highest-risk content on this site.",
+    "grade": "unverified",
+    "sources": []
+  },
+  "verified": "2026-08-25"
+}

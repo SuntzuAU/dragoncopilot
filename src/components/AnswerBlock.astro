@@ -1,0 +1,10 @@
+---
+/** The extractable unit. A question label, then a short direct answer in its
+ *  own visually distinct block. Answer engines lift this; humans skim it.
+ *  Keep answers 40-55 words. No hedging preamble before the answer. */
+const { question } = Astro.props;
+---
+<div class="answer">
+  {question && <span class="answer__q">{question}</span>}
+  <p><slot /></p>
+</div>

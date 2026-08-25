@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AnswerBlock from '../../components/AnswerBlock.astro';
+import EvidenceTable from '../../components/EvidenceTable.astro';
+import StatusPill from '../../components/StatusPill.astro';
+import Callout from '../../components/Callout.astro';
+import site from '../../site.config.json';
+import { getCollection } from 'astro:content';
+
+const emrs = (await getCollection('emr')).map((e: any) => e.data)
+  .sort((a: any, b: any) => a.name.localeCompare(b.name));
+
+const pending = emrs.filter((e: any) => e.dragonCopilot.grade === 'unverified').length;
+
+const schema = [{
+  "@type": "FAQPage",
+  mainEntity: [{
+    "@type": "Question",
+    name: "Which Australian EMR systems integrate with Dragon Copilot?",
+    acceptedAnswer: { "@type": "Answer", text: "Microsoft publishes detailed integration documentation for Epic. For Australian general practice and specialist systems — Best Practice, MedicalDirector, Helix, Genie, Gentu, Zedmed and Clinic to Cloud — no equivalent public Microsoft integration documentation has been verified. Compatibility through supported text controls is a separate question from a native integration." }
+  }]
+}];
+---
+<BaseLayout title={`Dragon Copilot and Australian EMR integration | ${site.siteName}`}
+  description="System-by-system Dragon Copilot and Dragon Medical One integration status for Australian EMR and practice management software, with evidence grading and verification dates."
+  schema={schema}>
+  <div class="wrap" style="padding-top:28px;padding-bottom:56px">
+    <h1>Which Australian EMR systems work with Dragon Copilot?</h1>
+
+    <AnswerBlock>
+      Microsoft publishes deep public integration documentation for Epic. For the Australian general practice and
+      specialist systems — Best Practice, MedicalDirector, Helix, Genie, Gentu, Zedmed and Clinic to Cloud — no
+      equivalent Microsoft integration documentation has been verified. Compatibility through supported text controls
+      is a different thing from a native, supported integration.
+    </AnswerBlock>
+
+    <Callout type="warn" title="Read the two columns separately">
+      <p><strong>Native integration</strong> means the vendor built and supports it: the note lands in the right
+      place in the record. <strong>Compatible</strong> only means dictation types into a text field. Vendors and
+      resellers routinely blur the two. This site does not.</p>
+    </Callout>
+
+    <EvidenceTable caption={`Dragon Copilot and Dragon Medical One integration status across Australian EMR and practice management systems. ${pending} of ${emrs.length} entries are pending primary-source verification and are shown as unverified rather than guessed.`}>
+      <thead>
+        <tr>
+          <th scope="col">System</th><th scope="col">Vendor</th><th scope="col">Hosting</th>
+          <th scope="col">Dragon Copilot</th><th scope="col">Dragon Medical One</th>
+          <th scope="col">Evidence</th><th scope="col">Verified</th>
+        </tr>
+      </thead>
+      <tbody>
+        {emrs.map((e: any) => (
+          <tr>
+            <th scope="row"><a href={`/emr/${e.slug}/`}>{e.name}</a></th>
+            <td>{e.vendor}</td>
+            <td>{e.hosting}</td>
+            <td><StatusPill status={e.dragonCopilot.status} /></td>
+            <td><StatusPill status={e.dragonMedicalOne.status} /></td>
+            <td>{e.dragonCopilot.grade}</td>
+            <td>{e.verified}</td>
+          </tr>
+        ))}
+      </tbody>
+    </EvidenceTable>
+  </div>
+</BaseLayout>

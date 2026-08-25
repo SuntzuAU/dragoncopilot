@@ -1,0 +1,32 @@
+{
+  "siteName": "Dragon Copilot Australia",
+  "domain": "https://dragoncopilot.com.au",
+  "siteType": "reference",
+  "tagline": "An Australian reference guide to Microsoft Dragon Copilot and Dragon Medical One",
+  "publisher": {
+    "name": "Voice Recognition Australia",
+    "url": "https://voicerecognition.com.au",
+    "role": "Authorised Australian reseller",
+    "yearsTrading": 27
+  },
+  "affiliationNotice": "Dragon Copilot, Dragon Medical One and Microsoft are trademarks of Microsoft Corporation. This site is published by Voice Recognition Australia, an authorised Australian reseller. It is an independent reference resource and is not published by Microsoft.",
+  "colours": {
+    "primary": "#0b3b6f",
+    "primaryDark": "#072a50",
+    "accent": "#c2410c",
+    "background": "#ffffff",
+    "surface": "#f6f8fb",
+    "border": "#dfe6ef",
+    "text": "#0f172a",
+    "muted": "#4a5b70",
+    "ok": "#0f766e",
+    "warn": "#b45309",
+    "gone": "#b91c1c"
+  },
+  "hubs": [
+    { "slug": "product", "title": "Product & Licensing", "blurb": "What Dragon Copilot is, how it is licensed, and how the options differ." },
+    { "slug": "australia", "title": "Australia", "blurb": "Availability, data residency, EMR integration and Australian health sector reality." },
+    { "slug": "compliance", "title": "Privacy & Compliance", "blurb": "Data handling, retention, consent, security and regulatory status." },
+    { "slug": "evidence", "title": "Evidence & Comparisons", "blurb": "What independent studies actually show, and how alternatives compare." }
+  ]
+}

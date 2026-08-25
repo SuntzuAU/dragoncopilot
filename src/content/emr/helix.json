@@ -1,0 +1,24 @@
+{
+  "name": "Helix",
+  "vendor": "Telstra Health",
+  "slug": "helix",
+  "aliases": ["MedicalDirector Helix"],
+  "segment": ["general-practice"],
+  "hosting": "cloud",
+  "marketNote": "Cloud-native Australian general practice system from the MedicalDirector stable. Browser-delivered, which changes the dictation integration question entirely — see the supported edit controls page.",
+  "dragonCopilot": {
+    "status": "unknown",
+    "ambient": "unknown",
+    "dictation": "unknown",
+    "note": "RESEARCH PENDING. Browser-based systems depend on Microsoft's supported edit control list rather than a native build. Verify against that list before publishing.",
+    "grade": "unverified",
+    "sources": [36]
+  },
+  "dragonMedicalOne": {
+    "status": "unknown",
+    "note": "RESEARCH PENDING.",
+    "grade": "unverified",
+    "sources": []
+  },
+  "verified": "2026-08-25"
+}

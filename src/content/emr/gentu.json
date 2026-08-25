@@ -1,0 +1,24 @@
+{
+  "name": "Gentu",
+  "vendor": "Genie Solutions",
+  "slug": "gentu",
+  "aliases": [],
+  "segment": ["specialist"],
+  "hosting": "cloud",
+  "marketNote": "Cloud specialist practice management from Genie Solutions.",
+  "dragonCopilot": {
+    "status": "unknown",
+    "ambient": "unknown",
+    "dictation": "unknown",
+    "note": "RESEARCH PENDING.",
+    "grade": "unverified",
+    "sources": []
+  },
+  "dragonMedicalOne": {
+    "status": "unknown",
+    "note": "RESEARCH PENDING.",
+    "grade": "unverified",
+    "sources": []
+  },
+  "verified": "2026-08-25"
+}

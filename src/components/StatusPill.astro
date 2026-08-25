@@ -1,0 +1,12 @@
+---
+const { status } = Astro.props;
+const label: Record<string,string> = {
+  native: 'Native integration',
+  compatible: 'Compatible only',
+  announced: 'Announced',
+  partner: 'Via partner',
+  none: 'No support found',
+  unknown: 'Not yet verified'
+};
+---
+<span class={`pill pill--${status}`}>{label[status] ?? status}</span>

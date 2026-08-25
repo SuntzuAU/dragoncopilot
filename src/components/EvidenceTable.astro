@@ -1,0 +1,11 @@
+---
+/** Wraps a real <table> in a scroll container. Never replace the table
+ *  element with grid divs — parsers and answer engines read table markup. */
+const { caption } = Astro.props;
+---
+<div class="tablewrap">
+  <table>
+    {caption && <caption>{caption}</caption>}
+    <slot />
+  </table>
+</div>

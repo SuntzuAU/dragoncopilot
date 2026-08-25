@@ -1,0 +1,8 @@
+---
+const { type = 'note', title } = Astro.props;
+const cls = type === 'warn' ? 'callout callout--warn' : type === 'stop' ? 'callout callout--stop' : 'callout';
+---
+<aside class={cls}>
+  {title && <p><strong>{title}</strong></p>}
+  <slot />
+</aside>

@@ -1,0 +1,15 @@
+{
+  "name": "Mater",
+  "slug": "mater",
+  "type": "not-for-profit-network",
+  "jurisdiction": "Queensland",
+  "scale": "Queensland not-for-profit hospital, health and research network.",
+  "emrPlatforms": [],
+  "procurementRoute": "Group-level corporate procurement",
+  "speechFootprint": {
+    "note": "RESEARCH PENDING. Do not publish any claim about this organisation's speech recognition or ambient AI deployment without a primary source. Named-customer claims are the highest-risk content on this site.",
+    "grade": "unverified",
+    "sources": []
+  },
+  "verified": "2026-08-25"
+}

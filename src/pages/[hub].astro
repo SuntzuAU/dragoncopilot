@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AnswerBlock from '../components/AnswerBlock.astro';
+import site from '../site.config.json';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  return site.hubs.map((h: any) => ({ params: { hub: h.slug }, props: { hub: h } }));
+}
+const { hub } = Astro.props;
+const pages = (await getCollection('docs', (e: any) => !e.data.draft && e.data.hub === hub.slug))
+  .sort((a: any, b: any) => a.data.order - b.data.order);
+---
+<BaseLayout title={`${hub.title} | ${site.siteName}`} description={hub.blurb}>
+  <div class="wrap" style="padding-top:28px;padding-bottom:56px">
+    <h1>{hub.title}</h1>
+    <AnswerBlock>{hub.blurb}</AnswerBlock>
+    <ul>
+      {pages.map((p: any) => (
+        <li><a href={`/${p.slug}/`}>{p.data.question}</a> — <span style="color:var(--muted)">{p.data.answer.slice(0,120)}…</span></li>
+      ))}
+    </ul>
+    {pages.length === 0 && <p style="color:var(--muted)">No published pages in this hub yet.</p>}
+  </div>
+</BaseLayout>

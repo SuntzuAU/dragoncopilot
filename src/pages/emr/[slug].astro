@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AnswerBlock from '../../components/AnswerBlock.astro';
+import EvidenceTable from '../../components/EvidenceTable.astro';
+import StatusPill from '../../components/StatusPill.astro';
+import SourceList from '../../components/SourceList.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import site from '../../site.config.json';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const emrs = await getCollection('emr');
+  return emrs.map((e: any) => ({ params: { slug: e.data.slug }, props: { emr: e.data } }));
+}
+const { emr } = Astro.props;
+const url = new URL(`/emr/${emr.slug}/`, site.domain).href;
+const question = `Does Dragon Copilot work with ${emr.name}?`;
+const answer = emr.dragonCopilot.grade === 'unverified'
+  ? `As at ${emr.verified}, no primary Microsoft documentation confirming a Dragon Copilot integration with ${emr.name} has been verified. This page states that plainly rather than guessing. ${emr.name} is ${emr.hosting}-hosted, which determines whether dictation depends on a native integration or on supported text controls.`
+  : emr.dragonCopilot.note.slice(0, 400);
+
+const ids = [...new Set([...(emr.dragonCopilot.sources||[]), ...(emr.dragonMedicalOne.sources||[])])];
+const schema = [{
+  "@type": "FAQPage", "@id": `${url}#faq`,
+  mainEntity: [{ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } }]
+}];
+---
+<BaseLayout title={`${question} | ${site.siteName}`}
+  description={`Dragon Copilot and Dragon Medical One integration status for ${emr.name} (${emr.vendor}), with evidence grading and a verification date.`}
+  canonical={url} schema={schema}>
+  <div class="wrap" style="padding-top:28px;padding-bottom:56px;max-width:900px">
+    <Breadcrumbs trail={[{label:'Home',href:'/'},{label:'EMR integration',href:'/emr/'},{label:emr.name}]} />
+    <h1>{question}</h1>
+    <div class="stamp">
+      <span><b>Last verified</b> {emr.verified}</span>
+      <span><b>Evidence grade</b> {emr.dragonCopilot.grade}</span>
+      <span><b>Hosting</b> {emr.hosting}</span>
+    </div>
+
+    <AnswerBlock>{answer}</AnswerBlock>
+
+    <h2>About {emr.name}</h2>
+    <p>{emr.marketNote}</p>
+
+    <h2>Integration status</h2>
+    <EvidenceTable caption={`Integration status for ${emr.name}, ${emr.vendor}.`}>
+      <tbody>
+        <tr><th scope="row">Dragon Copilot — overall</th><td><StatusPill status={emr.dragonCopilot.status} /></td></tr>
+        <tr><th scope="row">Ambient documentation</th><td><StatusPill status={emr.dragonCopilot.ambient} /></td></tr>
+        <tr><th scope="row">Dictation</th><td><StatusPill status={emr.dragonCopilot.dictation} /></td></tr>
+        <tr><th scope="row">Dragon Medical One</th><td><StatusPill status={emr.dragonMedicalOne.status} /></td></tr>
+      </tbody>
+    </EvidenceTable>
+    <p>{emr.dragonCopilot.note}</p>
+    <p>{emr.dragonMedicalOne.note}</p>
+
+    <SourceList ids={ids} />
+  </div>
+</BaseLayout>

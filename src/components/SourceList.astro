@@ -1,0 +1,18 @@
+---
+import sources from '../data/sources.json';
+const { ids = [] } = Astro.props;
+const map = new Map((sources as any[]).map(s => [s.id, s]));
+const used = ids.map((n: number) => map.get(n)).filter(Boolean);
+---
+{used.length > 0 && (
+  <section class="sources" id="sources">
+    <h2>Sources</h2>
+    <ol>
+      {used.map((s: any) => (
+        <li id={`s${s.id}`}>
+          {s.title}. <a href={s.url} rel="nofollow noopener" target="_blank">{new URL(s.url).hostname}</a>
+        </li>
+      ))}
+    </ol>
+  </section>
+)}

@@ -1,0 +1,24 @@
+{
+  "name": "MedicalDirector",
+  "vendor": "Telstra Health",
+  "slug": "medical-director",
+  "aliases": ["MD", "MedicalDirector Clinical", "Pracsoft"],
+  "segment": ["general-practice", "specialist"],
+  "hosting": "on-premise",
+  "marketNote": "The other long-established Australian general practice clinical system, now owned by Telstra Health. Helix is its cloud-native sibling product.",
+  "dragonCopilot": {
+    "status": "unknown",
+    "ambient": "unknown",
+    "dictation": "unknown",
+    "note": "RESEARCH PENDING. No public Microsoft documentation located as at 25 August 2026.",
+    "grade": "unverified",
+    "sources": []
+  },
+  "dragonMedicalOne": {
+    "status": "unknown",
+    "note": "RESEARCH PENDING.",
+    "grade": "unverified",
+    "sources": []
+  },
+  "verified": "2026-08-25"
+}

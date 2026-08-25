@@ -1,0 +1,73 @@
+---
+import site from '../site.config.json';
+import '../styles/global.css';
+
+const {
+  title, description, canonical,
+  schema = [],           // extra JSON-LD nodes
+} = Astro.props;
+
+const url = canonical ?? new URL(Astro.url.pathname, site.domain).href;
+
+const graph = [
+  {
+    "@type": "Organization",
+    "@id": `${site.domain}/#publisher`,
+    name: site.publisher.name,
+    url: site.publisher.url,
+    description: `${site.publisher.role}, trading ${site.publisher.yearsTrading} years.`,
+    areaServed: "AU"
+  },
+  {
+    "@type": "WebSite",
+    "@id": `${site.domain}/#website`,
+    url: site.domain,
+    name: site.siteName,
+    inLanguage: "en-AU",
+    publisher: { "@id": `${site.domain}/#publisher` }
+  },
+  ...schema
+];
+---
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={url} />
+  <!-- max-snippet:-1 matters: it removes the snippet-length cap that otherwise
+       truncates the answer block before an engine can lift the whole answer. -->
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={url} />
+  <meta property="og:locale" content="en_AU" />
+  <meta property="og:site_name" content={site.siteName} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json" set:html={JSON.stringify({ "@context": "https://schema.org", "@graph": graph })} />
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead__bar">
+      <a class="masthead__name" href="/">{site.siteName}</a>
+      <nav class="masthead__nav" aria-label="Primary">
+        {site.hubs.map((h: any) => <a href={`/${h.slug}/`}>{h.title}</a>)}
+        <a href="/emr/">EMR integration</a>
+        <a href="/enquiry/">Enquiry</a>
+      </nav>
+    </div>
+  </header>
+
+  <slot />
+
+  <footer class="foot">
+    <div class="wrap">
+      <p><strong>{site.publisher.name}</strong> — {site.publisher.role}. {site.tagline}.</p>
+      <p class="foot__notice">{site.affiliationNotice}</p>
+    </div>
+  </footer>
+</body>
+</html>
