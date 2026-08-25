@@ -11,7 +11,7 @@ Last updated: 25 August 2026
 - [x] `.claude/` network standards copied verbatim from `astro-gateway-master`
 - [x] `ACForm.astro` created from the frozen template
 - [ ] **BLOCKED — ActiveCampaign form ID and `or` UUID** (`site.config.json` → `form`, currently `CHANGE_ME`)
-- [ ] **BLOCKED — GA4 measurement ID** for dragoncopilot.com.au (`googleAnalyticsId`, currently empty)
+- [ ] **DEFERRED — GA4 measurement ID.** Russ cannot create the property until approval comes through. Agreed 25 Aug 2026 to leave `googleAnalyticsId` empty and do it at the end, before deploy. The GA snippet does not fire while the field is empty, so this is safe to defer.
 - [ ] `public/logo.jpg` — not yet supplied
 - [ ] Register the new site in `link-network.json` across **all other network repos**
 
@@ -24,7 +24,7 @@ Last updated: 25 August 2026
 - [x] Sample reference page: What is Dragon Flex
 - [ ] Australian EMR integration status — all except Epic are `[VERIFY]`, pending primary sources
 - [ ] Government and hospital cluster
-- [ ] Dragon Medical One search-capture cluster
+- [x] Dragon Medical One search-capture cluster — 3 pages
 - [ ] Remaining reference pages across the four hubs
 
 ## Phase 3 — Images
