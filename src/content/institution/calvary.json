@@ -3,9 +3,9 @@
   "slug": "calvary",
   "type": "not-for-profit-network",
   "jurisdiction": "National",
-  "scale": "National not-for-profit network of public and private hospitals, aged care and community care.",
+  "scale": "National not-for-profit network of public and private hospitals, aged care and community care, operated as a Catholic health service.",
   "emrPlatforms": [],
-  "procurementRoute": "Group-level corporate procurement",
+  "procurementRoute": "Group-level corporate procurement. Faith-based operators typically add an ethics or mission committee review over clinical AI adoption, which sits alongside \u2014 not inside \u2014 the standard IT procurement path.",
   "speechFootprint": {
     "note": "[VERIFY] Do not publish any claim about this organisation's speech recognition or ambient AI deployment without a primary source. Named-customer claims are the highest-risk content on this site.",
     "grade": "unverified",

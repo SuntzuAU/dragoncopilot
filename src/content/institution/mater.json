@@ -5,7 +5,7 @@
   "jurisdiction": "Queensland",
   "scale": "Queensland not-for-profit hospital, health and research network.",
   "emrPlatforms": [],
-  "procurementRoute": "Group-level corporate procurement",
+  "procurementRoute": "Group-level corporate procurement, with a mission or ethics review layer over clinical AI adoption in addition to the standard IT procurement path.",
   "speechFootprint": {
     "note": "[VERIFY] Do not publish any claim about this organisation's speech recognition or ambient AI deployment without a primary source. Named-customer claims are the highest-risk content on this site.",
     "grade": "unverified",

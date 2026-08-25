@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AnswerBlock from '../../components/AnswerBlock.astro';
+import EvidenceTable from '../../components/EvidenceTable.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import SourceList from '../../components/SourceList.astro';
+import site from '../../site.config.json';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const insts = await getCollection('institution');
+  return insts.map((e: any) => ({ params: { slug: e.data.slug }, props: { inst: e.data } }));
+}
+const { inst } = Astro.props;
+const url = new URL(`/sector/${inst.slug}/`, site.domain).href;
+const question = `How would ${inst.name} procure clinical speech recognition or ambient AI?`;
+const answer = `${inst.name} buys through ${inst.procurementRoute.charAt(0).toLowerCase() + inst.procurementRoute.slice(1)} As at ${inst.verified}, this site holds no primary-source confirmation of any Dragon Copilot or Dragon Medical One deployment at ${inst.name}, and makes no claim either way.`;
+
+const schema = [{
+  "@type": "FAQPage", "@id": `${url}#faq`,
+  mainEntity: [{ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } }]
+}];
+---
+<BaseLayout title={`${question} | ${site.siteName}`}
+  description={`Procurement route, EMR platform and clinical documentation context for ${inst.name}, ${inst.jurisdiction}.`}
+  canonical={url} schema={schema}>
+  <div class="wrap" style="padding-top:28px;padding-bottom:56px;max-width:900px">
+    <Breadcrumbs trail={[{label:'Home',href:'/'},{label:'Government & hospitals',href:'/sector/'},{label:inst.name}]} />
+    <h1>{question}</h1>
+    <div class="stamp">
+      <span><b>Last verified</b> {inst.verified}</span>
+      <span><b>Jurisdiction</b> {inst.jurisdiction}</span>
+    </div>
+
+    <AnswerBlock>{answer}</AnswerBlock>
+
+    <h2>Organisation profile</h2>
+    <p>{inst.scale}</p>
+
+    <EvidenceTable caption={`Procurement and platform summary for ${inst.name}.`}>
+      <tbody>
+        <tr><th scope="row">Type</th><td>{inst.type.replace(/-/g,' ')}</td></tr>
+        <tr><th scope="row">Jurisdiction</th><td>{inst.jurisdiction}</td></tr>
+        <tr><th scope="row">EMR platform</th><td>{inst.emrPlatforms.length ? inst.emrPlatforms.join(', ') : '[VERIFY]'}</td></tr>
+        <tr><th scope="row">Procurement route</th><td>{inst.procurementRoute}</td></tr>
+        <tr><th scope="row">Speech / ambient AI footprint</th><td>{inst.speechFootprint.note}</td></tr>
+      </tbody>
+    </EvidenceTable>
+
+    <SourceList ids={inst.speechFootprint.sources} />
+  </div>
+</BaseLayout>

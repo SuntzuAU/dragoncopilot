@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AnswerBlock from '../../components/AnswerBlock.astro';
+import EvidenceTable from '../../components/EvidenceTable.astro';
+import Callout from '../../components/Callout.astro';
+import site from '../../site.config.json';
+import { getCollection } from 'astro:content';
+
+const insts = (await getCollection('institution')).map((e: any) => e.data);
+const order = ['state-health','lhd','federal','not-for-profit-network','private-network','university-hospital'];
+const groupLabel: Record<string,string> = {
+  'state-health': 'State and territory health departments',
+  'lhd': 'Local health districts and hospital services',
+  'federal': 'Commonwealth',
+  'not-for-profit-network': 'Not-for-profit hospital networks',
+  'private-network': 'Private hospital operators',
+  'university-hospital': 'University hospitals'
+};
+const groups = order
+  .map(t => ({ type: t, label: groupLabel[t], rows: insts.filter((i: any) => i.type === t).sort((a:any,b:any)=>a.name.localeCompare(b.name)) }))
+  .filter(g => g.rows.length);
+
+const schema = [{
+  "@type": "FAQPage",
+  mainEntity: [{
+    "@type": "Question",
+    name: "How is clinical speech recognition bought by Australian hospitals and health departments?",
+    acceptedAnswer: { "@type": "Answer", text: "Rarely by an individual clinician. State health departments buy through central ICT procurement and state purchasing arrangements; local health districts buy within those arrangements; private and not-for-profit hospital groups buy at group level. Faith-based operators typically add an ethics or mission review over clinical AI adoption." }
+  }]
+}];
+---
+<BaseLayout title={`Government and hospital procurement | ${site.siteName}`}
+  description="How Australian health departments, local health districts and hospital networks procure clinical speech recognition and ambient AI — buying routes, EMR platforms and governance layers."
+  schema={schema}>
+  <div class="wrap" style="padding-top:28px;padding-bottom:56px">
+    <h1>How do Australian hospitals and health departments buy clinical speech recognition?</h1>
+
+    <AnswerBlock>
+      Rarely by an individual clinician. State health departments buy through central ICT procurement
+      and state purchasing arrangements; local health districts buy within those arrangements; private
+      and not-for-profit hospital groups buy at group level. Faith-based operators typically add an
+      ethics or mission review over clinical AI adoption.
+    </AnswerBlock>
+
+    <Callout type="warn" title="No deployment claims on this site without a source">
+      <p>Every organisation below is listed for its procurement route and EMR platform only. This site
+      does not state which Australian health services are running Dragon Copilot, Dragon Medical One or
+      any ambient AI product unless a primary source confirms it. Vendor customer lists and conference
+      slides are not primary sources.</p>
+    </Callout>
+
+    {groups.map(g => (
+      <>
+        <h2 id={g.type}>{g.label}</h2>
+        <EvidenceTable caption={`${g.label}. Procurement route and known EMR platforms. Speech and ambient AI deployment is marked [VERIFY] throughout.`}>
+          <thead><tr>
+            <th scope="col">Organisation</th><th scope="col">Jurisdiction</th>
+            <th scope="col">EMR platform</th><th scope="col">Procurement route</th><th scope="col">Verified</th>
+          </tr></thead>
+          <tbody>
+            {g.rows.map((i: any) => (
+              <tr>
+                <th scope="row"><a href={`/sector/${i.slug}/`}>{i.name}</a></th>
+                <td>{i.jurisdiction}</td>
+                <td>{i.emrPlatforms.length ? i.emrPlatforms.join(', ') : '[VERIFY]'}</td>
+                <td>{i.procurementRoute}</td>
+                <td>{i.verified}</td>
+              </tr>
+            ))}
+          </tbody>
+        </EvidenceTable>
+      </>
+    ))}
+  </div>
+</BaseLayout>
