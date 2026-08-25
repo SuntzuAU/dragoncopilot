@@ -72,3 +72,31 @@ Build command `npm run build`, output directory `dist`.
 Check `SuntzuAU/seo-authority-register` — `DECISIONS.md` first, then the rules.
 3 links/month velocity cap, 60-day donor cooling, 30% anchor diversity limit, no UTM
 parameters on cross-network links.
+
+## Network standards — these override anything above
+
+This repo is part of the VRA gateway network and follows the same rules as the other
+SuntzuAU site repos. The canonical copies live in `astro-gateway-master`; the copies in
+`.claude/` here are kept identical.
+
+- `.claude/CONTENT-GUIDELINES.md` — ACL compliance, voice, competitor comparisons,
+  healthcare claims. **Read before writing any copy.**
+- `.claude/INTERLINK-RULES.md` — no footer links ever; 1–3 internal and 1–2 external links
+  per article; body links must match frontmatter declarations.
+- `.claude/INFRASTRUCTURE.md` — deployment checklist, GA4 IDs, Cloudflare and R2 config.
+- `.claude/IMAGE-STANDARDS.md` and `.claude/IMAGE-GENERATION.md` — image sizes and the
+  Worker generation workflow.
+- `.claude/BUILD-RULES.md` — Astro architecture, performance, YouTube facade pattern.
+
+Additional constraints that bite on this site specifically:
+
+- **Healthcare claims.** Never imply the software improves patient outcomes, provides
+  clinical advice, is a medical device, or is clinically validated. Microsoft's own
+  UKCA Class I marking in Great Britain is a fact about a jurisdiction, not a claim
+  this site may generalise.
+- **Authority claims** come only from the `authority` block in `src/data/link-network.json`.
+  Never improvise credentials or years of experience.
+- **`[VERIFY]`** is the network convention for an unconfirmed claim. Used throughout the
+  `emr` and `institution` collections. It is publishable; an invented status is not.
+- **Approval workflow applies.** Draft in chat, flag `[VERIFY]` items, get approval,
+  then commit. Do not commit content Russ has not seen.

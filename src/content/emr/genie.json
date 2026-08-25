@@ -10,13 +10,13 @@
     "status": "unknown",
     "ambient": "unknown",
     "dictation": "unknown",
-    "note": "RESEARCH PENDING. Specialist dictation volume makes this one of the highest-value integrations to confirm accurately.",
+    "note": "[VERIFY] Specialist dictation volume makes this one of the highest-value integrations to confirm accurately.",
     "grade": "unverified",
     "sources": []
   },
   "dragonMedicalOne": {
     "status": "unknown",
-    "note": "RESEARCH PENDING.",
+    "note": "[VERIFY]",
     "grade": "unverified",
     "sources": []
   },

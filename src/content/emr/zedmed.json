@@ -10,13 +10,13 @@
     "status": "unknown",
     "ambient": "unknown",
     "dictation": "unknown",
-    "note": "RESEARCH PENDING. Editorial note: statements about this vendor must be strictly factual and sourced. No comparative or evaluative language.",
+    "note": "[VERIFY] Editorial note: statements about this vendor must be strictly factual and sourced. No comparative or evaluative language.",
     "grade": "unverified",
     "sources": []
   },
   "dragonMedicalOne": {
     "status": "unknown",
-    "note": "RESEARCH PENDING.",
+    "note": "[VERIFY]",
     "grade": "unverified",
     "sources": []
   },

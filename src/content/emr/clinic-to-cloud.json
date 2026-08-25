@@ -10,13 +10,13 @@
     "status": "unknown",
     "ambient": "unknown",
     "dictation": "unknown",
-    "note": "RESEARCH PENDING. Note the vendor operates its own dictation workflow — the competitive framing on this page needs care.",
+    "note": "[VERIFY] Note the vendor operates its own dictation workflow — the competitive framing on this page needs care.",
     "grade": "unverified",
     "sources": []
   },
   "dragonMedicalOne": {
     "status": "unknown",
-    "note": "RESEARCH PENDING.",
+    "note": "[VERIFY]",
     "grade": "unverified",
     "sources": []
   },

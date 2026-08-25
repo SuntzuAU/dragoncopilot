@@ -10,13 +10,13 @@
     "status": "unknown",
     "ambient": "unknown",
     "dictation": "unknown",
-    "note": "RESEARCH PENDING. No public Microsoft documentation located as at 25 August 2026.",
+    "note": "[VERIFY] No public Microsoft documentation located as at 25 August 2026.",
     "grade": "unverified",
     "sources": []
   },
   "dragonMedicalOne": {
     "status": "unknown",
-    "note": "RESEARCH PENDING.",
+    "note": "[VERIFY]",
     "grade": "unverified",
     "sources": []
   },

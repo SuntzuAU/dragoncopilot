@@ -10,13 +10,13 @@
     "status": "unknown",
     "ambient": "unknown",
     "dictation": "unknown",
-    "note": "RESEARCH PENDING. No public Microsoft documentation of a Dragon Copilot integration with Best Practice was located in the 25 August 2026 research. Do not publish a status until verified against a primary source.",
+    "note": "[VERIFY] No public Microsoft documentation of a Dragon Copilot integration with Best Practice was located in the 25 August 2026 research. Do not publish a status until verified against a primary source.",
     "grade": "unverified",
     "sources": []
   },
   "dragonMedicalOne": {
     "status": "unknown",
-    "note": "RESEARCH PENDING. Verify current status directly before publishing.",
+    "note": "[VERIFY] Verify current status directly before publishing.",
     "grade": "unverified",
     "sources": []
   },

@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AnswerBlock from '../components/AnswerBlock.astro';
+import ACForm from '../components/ACForm.astro';
+import site from '../site.config.json';
+const c = site.colours;
+---
+<BaseLayout title={`Request current Dragon Copilot information | ${site.siteName}`}
+  description="Ask Voice Recognition Australia for current Dragon Copilot and Dragon Medical One availability, licensing options and EMR integration information for your organisation.">
+  <div class="wrap" style="padding-top:28px;padding-bottom:56px;max-width:900px">
+    <h1>How do I get current Dragon Copilot information for my organisation?</h1>
+    <AnswerBlock>
+      Ask Voice Recognition Australia. Availability, licensing terms and integration support for Dragon Copilot
+      change regularly and are not all published. Tell us your clinical software, your user numbers and your
+      jurisdiction, and we will confirm the current position rather than the position at the date on this page.
+    </AnswerBlock>
+
+    <h2>What to include</h2>
+    <ul>
+      <li>Your organisation and sector — general practice, specialist, hospital, or government health service</li>
+      <li>Your clinical or practice management system</li>
+      <li>Approximate number of clinicians</li>
+      <li>Whether you use Dragon Medical One today</li>
+      <li>Any data residency or procurement requirements</li>
+    </ul>
+
+    <div style={`background:${c.primaryDark};border-radius:6px;padding:26px;margin-top:28px`}>
+      <ACForm />
+    </div>
+  </div>
+</BaseLayout>

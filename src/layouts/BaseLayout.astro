@@ -48,6 +48,17 @@ const graph = [
   <meta property="og:site_name" content={site.siteName} />
   <meta name="twitter:card" content="summary_large_image" />
   <script type="application/ld+json" set:html={JSON.stringify({ "@context": "https://schema.org", "@graph": graph })} />
+  {site.googleAnalyticsId && (
+    <>
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${site.googleAnalyticsId}`}></script>
+      <script define:vars={{ gaId: site.googleAnalyticsId }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', gaId);
+      </script>
+    </>
+  )}
 </head>
 <body>
   <header class="masthead">
@@ -66,6 +77,7 @@ const graph = [
   <footer class="foot">
     <div class="wrap">
       <p><strong>{site.publisher.name}</strong> — {site.publisher.role}. {site.tagline}.</p>
+      <p class="foot__notice">{site.editorialNotice}</p>
       <p class="foot__notice">{site.affiliationNotice}</p>
     </div>
   </footer>

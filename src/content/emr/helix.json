@@ -10,13 +10,13 @@
     "status": "unknown",
     "ambient": "unknown",
     "dictation": "unknown",
-    "note": "RESEARCH PENDING. Browser-based systems depend on Microsoft's supported edit control list rather than a native build. Verify against that list before publishing.",
+    "note": "[VERIFY] Browser-based systems depend on Microsoft's supported edit control list rather than a native build. Verify against that list before publishing.",
     "grade": "unverified",
     "sources": [36]
   },
   "dragonMedicalOne": {
     "status": "unknown",
-    "note": "RESEARCH PENDING.",
+    "note": "[VERIFY]",
     "grade": "unverified",
     "sources": []
   },

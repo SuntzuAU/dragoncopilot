@@ -99,5 +99,26 @@ const institution = defineCollection({
   })
 });
 
-export const collections = { docs, emr, institution };
-export type { };
+/** Network-standard article collection. Same shape as the other VRA gateway
+ *  repos so update-link-usage.js and the image workflows keep working. */
+const news = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    date: z.string(),
+    description: z.string(),
+    context: z.enum(['medical','legal','descriptive','brand','action','comparison','generic']).default('medical'),
+    heroImage: z.string().optional(),
+    heroImageAlt: z.string().optional(),
+    breakImage1: z.string().optional(),
+    breakImage1Alt: z.string().optional(),
+    breakImage2: z.string().optional(),
+    breakImage2Alt: z.string().optional(),
+    internalLinks: z.array(z.object({ to: z.string(), anchor: z.string() })).default([]),
+    externalLinks: z.array(z.object({ to: z.string(), anchor: z.string(), url: z.string() })).default([]),
+    draft: z.boolean().default(false)
+  })
+});
+
+export const collections = { docs, emr, institution, news };
+
