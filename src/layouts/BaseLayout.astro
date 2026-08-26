@@ -83,6 +83,7 @@ const graph = [
         <p><strong>{site.legal.resellerLine}</strong></p>
         <p>{site.legal.disclaimer}</p>
         <p>{site.legal.editorial}</p>
+        <p>Content on this site last reviewed {new Date(site.lastUpdated).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}.</p>
       </div>
     </div>
   </footer>

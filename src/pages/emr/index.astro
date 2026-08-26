@@ -22,7 +22,7 @@ const schema = [{
 }];
 ---
 <BaseLayout title={`Dragon Copilot and Australian EMR integration | ${site.siteName}`}
-  description="System-by-system Dragon Copilot and Dragon Medical One integration status for Australian EMR and practice management software, with evidence grading and verification dates."
+  description="System-by-system Dragon Copilot and Dragon Medical One integration status for Australian EMR and practice management software, with evidence grading."
   schema={schema}>
   <div class="wrap" style="padding-top:28px;padding-bottom:56px">
     <h1>Which Australian EMR systems work with Dragon Copilot?</h1>
@@ -45,7 +45,7 @@ const schema = [{
         <tr>
           <th scope="col">System</th><th scope="col">Vendor</th><th scope="col">Hosting</th>
           <th scope="col">Dragon Copilot</th><th scope="col">Dragon Medical One</th>
-          <th scope="col">Evidence</th><th scope="col">Verified</th>
+          <th scope="col">Evidence</th>
         </tr>
       </thead>
       <tbody>
@@ -57,7 +57,6 @@ const schema = [{
             <td><StatusPill status={e.dragonCopilot.status} /></td>
             <td><StatusPill status={e.dragonMedicalOne.status} /></td>
             <td>{e.dragonCopilot.grade}</td>
-            <td>{e.verified}</td>
           </tr>
         ))}
       </tbody>

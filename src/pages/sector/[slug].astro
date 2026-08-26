@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 const { inst } = Astro.props;
 const url = new URL(`/sector/${inst.slug}/`, site.domain).href;
 const question = `How would ${inst.name} procure clinical speech recognition or ambient AI?`;
-const answer = `${inst.name} buys through ${inst.procurementRoute.charAt(0).toLowerCase() + inst.procurementRoute.slice(1)} As at ${inst.verified}, this site holds no primary-source confirmation of any Dragon Copilot or Dragon Medical One deployment at ${inst.name}, and makes no claim either way.`;
+const answer = `${inst.name} buys through ${inst.procurementRoute.charAt(0).toLowerCase() + inst.procurementRoute.slice(1)} This site holds no primary-source confirmation of any Dragon Copilot or Dragon Medical One deployment at ${inst.name}, and makes no claim either way.`;
 
 const schema = [{
   "@type": "FAQPage", "@id": `${url}#faq`,
@@ -28,7 +28,6 @@ const schema = [{
     <Breadcrumbs trail={[{label:'Home',href:'/'},{label:'Government & hospitals',href:'/sector/'},{label:inst.name}]} />
     <h1>{question}</h1>
     <div class="stamp">
-      <span><b>Last verified</b> {inst.verified}</span>
       <span><b>Jurisdiction</b> {inst.jurisdiction}</span>
     </div>
 

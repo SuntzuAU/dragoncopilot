@@ -4,6 +4,7 @@
   "siteType": "reference",
   "siteId": "dragoncopilot",
   "googleAnalyticsId": "",
+  "lastUpdated": "2026-08-25",
   "tagline": "An Australian reference guide to Microsoft Dragon Copilot and Dragon Medical One",
   "publisher": {
     "name": "Voice Recognition Australia",
@@ -12,7 +13,7 @@
     "roleShort": "authorised Dragon reseller Australia"
   },
   "affiliationNotice": "Dragon Copilot, Dragon Medical One and Microsoft are trademarks of Microsoft Corporation. This site is published by Voice Recognition Australia, an authorised Dragon reseller in Australia. It is an independent reference resource and is not published by Microsoft.",
-  "editorialNotice": "Information on this site is drawn from published vendor and regulatory documentation and is dated on every page. Product capability, availability and licensing terms may change without notice. Verify current details with the vendor or with Voice Recognition Australia before making a purchasing decision.",
+  "editorialNotice": "Information on this site is drawn from published vendor and regulatory documentation. Product capability, availability and licensing terms may change without notice. Verify current details with the vendor or with Voice Recognition Australia before making a purchasing decision.",
   "form": {
     "formId": "CHANGE_ME",
     "orUuid": "CHANGE_ME",
@@ -55,20 +56,13 @@
       "blurb": "Data handling, retention, consent, security and regulatory status.",
       "image": "dragoncopilot/2026/08/25/dragon-copilot-privacy-consent-doctor-patient-conversation-a915b013.jpg",
       "imageAlt": "A doctor talking with an older patient across a consulting room desk"
-    },
-    {
-      "slug": "evidence",
-      "title": "Evidence & Comparisons",
-      "blurb": "What the published independent studies show, and how alternatives compare.",
-      "image": "dragoncopilot/2026/08/25/dragon-copilot-evidence-researchers-reviewing-printed-studie-2831d123.jpg",
-      "imageAlt": "Two clinical researchers reviewing printed studies spread across a table"
     }
   ],
   "legal": {
     "entity": "Voice Recognition Australia",
     "resellerLine": "Voice Recognition Australia is a registered authorised reseller of Dragon products in Australia.",
     "disclaimer": "This website is operated by Voice Recognition Australia. It is not operated by, endorsed by, affiliated with, or sponsored by Microsoft Corporation or any of its subsidiaries. Microsoft, Dragon, Dragon Copilot, Dragon Medical One, DAX and Nuance are trademarks or registered trademarks of Microsoft Corporation in the United States and other countries. All product names, logos and brands are the property of their respective owners and are used on this site for identification and reference purposes only. Such use does not imply any affiliation with or endorsement by the trademark owner.",
-    "editorial": "Information on this site is compiled from published vendor, regulatory and peer-reviewed sources and carries a verification date on every page. Product capability, availability, licensing terms and pricing may change without notice. Nothing on this site constitutes clinical, legal, financial or procurement advice. Verify current details with the vendor or with Voice Recognition Australia before making a purchasing decision."
+    "editorial": "Information on this site is compiled from published vendor, regulatory and peer-reviewed sources. Product capability, availability, licensing terms and pricing may change without notice. Nothing on this site constitutes clinical, legal, financial or procurement advice. Verify current details with the vendor or with Voice Recognition Australia before making a purchasing decision."
   },
   "r2Base": "https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev",
   "heroImage": "dragoncopilot/2026/08/25/dragon-copilot-australia-clinician-consulting-room-hero-cbbc0a47.jpg",

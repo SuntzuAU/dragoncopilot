@@ -57,7 +57,7 @@ const schema = [{
         <EvidenceTable caption={`${g.label}. Procurement route and known EMR platforms. Speech and ambient AI deployment is marked [VERIFY] throughout.`}>
           <thead><tr>
             <th scope="col">Organisation</th><th scope="col">Jurisdiction</th>
-            <th scope="col">EMR platform</th><th scope="col">Procurement route</th><th scope="col">Verified</th>
+            <th scope="col">EMR platform</th><th scope="col">Procurement route</th>
           </tr></thead>
           <tbody>
             {g.rows.map((i: any) => (
@@ -66,7 +66,6 @@ const schema = [{
                 <td>{i.jurisdiction}</td>
                 <td>{i.emrPlatforms.length ? i.emrPlatforms.join(', ') : '[VERIFY]'}</td>
                 <td>{i.procurementRoute}</td>
-                <td>{i.verified}</td>
               </tr>
             ))}
           </tbody>
