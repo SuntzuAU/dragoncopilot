@@ -49,7 +49,11 @@ const docs = defineCollection({
     internalLinks: z.array(z.object({ to: z.string(), anchor: z.string() })).default([]),
     externalLinks: z.array(z.object({ to: z.string(), anchor: z.string(), url: z.string() })).default([]),
     order: z.number().default(100),
-    draft: z.boolean().default(false)
+    draft: z.boolean().default(false),
+    heroImage: z.string().optional(),
+    heroImageAlt: z.string().optional(),
+    breakImage1: z.string().optional(),
+    breakImage1Alt: z.string().optional()
   })
 });
 

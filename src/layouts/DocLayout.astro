@@ -5,6 +5,8 @@ import SourceList from '../components/SourceList.astro';
 import AnswerBlock from '../components/AnswerBlock.astro';
 import site from '../site.config.json';
 import { getCollection } from 'astro:content';
+import ContactCTA from '../components/ContactCTA.astro';
+import R2Image from '../components/R2Image.astro';
 
 const { entry, headings = [] } = Astro.props;
 const d = entry.data;
@@ -84,9 +86,21 @@ if (qa.length) {
         <span><b>Published by</b> {site.publisher.name}, {site.publisher.role}</span>
       </div>
 
+      {d.heroImage && (
+        <div style="margin:18px 0 22px">
+          <R2Image src={d.heroImage} alt={d.heroImageAlt} ratio="16 / 9" eager={true} />
+        </div>
+      )}
+
       <AnswerBlock>{d.answer}</AnswerBlock>
 
       <slot />
+
+      {d.breakImage1 && (
+        <div style="margin:28px 0">
+          <R2Image src={d.breakImage1} alt={d.breakImage1Alt} ratio="21 / 9" />
+        </div>
+      )}
 
       {d.faqs.length > 0 && (
         <section id="faq">
@@ -110,6 +124,8 @@ if (qa.length) {
       )}
 
       <SourceList ids={d.sources} />
+
+      <ContactCTA />
     </main>
 
     <nav class="toc" aria-label="On this page">

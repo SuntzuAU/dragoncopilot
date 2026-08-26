@@ -50,11 +50,11 @@ const schema = [{
       copy from. That is why the honest answer for a given system is often "confirm it for your setup".</p>
     </Callout>
 
-    <EvidenceTable caption="Dragon Copilot and Dragon Medical One status across Australian clinical and practice management systems. Systems marked pending are ones we have not confirmed and will not guess at.">
+    <EvidenceTable caption="Dragon Medical One and Dragon Copilot status across Australian clinical and practice management systems. Dragon Medical One is available in Australia today. Dragon Copilot is coming to the Australian market, so its per-system position will be confirmed on release.">
       <thead>
         <tr>
           <th scope="col">System</th><th scope="col">Vendor</th>
-          <th scope="col">Sector</th><th scope="col">Status</th>
+          <th scope="col">Dragon Medical One</th><th scope="col">Dragon Copilot</th>
         </tr>
       </thead>
       <tbody>
@@ -62,10 +62,14 @@ const schema = [{
           <tr>
             <th scope="row"><a href={`/emr/${e.slug}/`}>{e.name}</a></th>
             <td>{e.vendor}</td>
-            <td>{e.segment.map((s: string) => s.replace(/-/g, ' ')).join(', ')}</td>
             <td>
               <span style={`display:inline-block;font-weight:700;font-size:13px;padding:3px 10px;border-radius:3px;background:${e.status === 'available' ? '#E3F1EA' : c.surfaceAlt};color:${e.status === 'available' ? c.ok : c.muted}`}>
-                {e.status === 'available' ? 'Available' : 'Pending'}
+                {e.status === 'available' ? 'Available now' : 'Pending'}
+              </span>
+            </td>
+            <td>
+              <span style={`display:inline-block;font-weight:700;font-size:13px;padding:3px 10px;border-radius:3px;background:${c.primaryLight};color:${c.primaryDark}`}>
+                On Australian release
               </span>
             </td>
           </tr>
@@ -73,8 +77,8 @@ const schema = [{
       </tbody>
     </EvidenceTable>
 
-    <h2>Confirmed today</h2>
-    <p>These are the systems Dragon is documented or established to work with in Australia.</p>
+    <h2>Dragon Medical One — confirmed today</h2>
+    <p>These are the systems Dragon Medical One is documented or established to work with in Australia right now.</p>
     <ul>
       {available.map((e: any) => (
         <li><a href={`/emr/${e.slug}/`}><strong>{e.name}</strong></a> — {e.note}</li>

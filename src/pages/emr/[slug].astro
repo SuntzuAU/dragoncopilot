@@ -16,8 +16,8 @@ const { emr } = Astro.props;
 const url = new URL(`/emr/${emr.slug}/`, site.domain).href;
 const question = `Does Dragon work with ${emr.name}?`;
 const answer = emr.status === 'available'
-  ? `Yes. ${emr.note}`
-  : `Not confirmed yet. ${emr.note}`;
+  ? `Dragon Medical One: yes, available in Australia today. ${emr.note} Dragon Copilot is coming to the Australian market and its position for ${emr.name} will be confirmed on release.`
+  : `Dragon Medical One: not confirmed yet. ${emr.note} Dragon Copilot is coming to the Australian market and its position for ${emr.name} will be confirmed on release.`;
 
 const schema = [{
   "@type": "FAQPage", "@id": `${url}#faq`,
@@ -33,13 +33,18 @@ const schema = [{
 
     <div class="stamp">
       <span>
-        <b>Status</b>
+        <b>Dragon Medical One</b>
         <span style={`display:inline-block;font-weight:700;padding:2px 9px;border-radius:3px;margin-left:4px;background:${emr.status === 'available' ? '#E3F1EA' : c.surfaceAlt};color:${emr.status === 'available' ? c.ok : c.muted}`}>
-          {emr.status === 'available' ? 'Available' : 'Pending'}
+          {emr.status === 'available' ? 'Available now' : 'Pending'}
+        </span>
+      </span>
+      <span>
+        <b>Dragon Copilot</b>
+        <span style={`display:inline-block;font-weight:700;padding:2px 9px;border-radius:3px;margin-left:4px;background:${c.primaryLight};color:${c.primaryDark}`}>
+          On Australian release
         </span>
       </span>
       <span><b>Vendor</b> {emr.vendor}</span>
-      <span><b>Hosting</b> {emr.hosting}</span>
     </div>
 
     <AnswerBlock>{answer}</AnswerBlock>
@@ -47,14 +52,14 @@ const schema = [{
     <h2>About {emr.name}</h2>
     <p>{emr.marketNote}</p>
 
-    <h2>What this means in practice</h2>
+    <h2>Dragon Medical One with {emr.name}</h2>
     {emr.status === 'available' ? (
-      <p>Dragon is in use with {emr.name} in Australia. Exactly how it behaves depends on your version,
+      <p>Dragon Medical One is in use with {emr.name} in Australia. Exactly how it behaves depends on your version,
       your deployment and whether you are running locally or through Citrix or remote desktop — so the
       practical step is to have Voice Recognition Australia confirm the configuration for your site before
       you roll it out across a team.</p>
     ) : (
-      <p>We have not confirmed a documented Dragon integration for {emr.name}, and we would rather say that
+      <p>We have not confirmed a documented Dragon Medical One integration for {emr.name}, and we would rather say that
       than guess. In many cases dictation still works through Dragon's dictation window, which you then paste
       from — it is just not the same thing as text landing directly in the clinical field. Voice Recognition
       Australia can test and confirm the position for your setup.</p>

@@ -1,0 +1,27 @@
+---
+// Bottom-of-page contact band. Sends the reader to the homepage enquiry form.
+import site from '../site.config.json';
+const c = site.colours;
+interface Props { heading?: string; body?: string; }
+const {
+  heading = 'Talk to Voice Recognition Australia',
+  body = 'Tell us your clinical software and how many clinicians you have. We will confirm what works today, and contact you when Dragon Copilot reaches Australia.'
+} = Astro.props as Props;
+---
+<section class="cta-band" style={`background:${c.primaryDark}`}>
+  <div class="cta-band__inner">
+    <h2 style="color:#fff;margin:0 0 8px">{heading}</h2>
+    <p style="color:#fff;opacity:.85;max-width:none;margin:0 0 18px">{body}</p>
+    <a href="/#register" class="cta-band__btn" style={`background:${c.accent}`}>Request information</a>
+  </div>
+</section>
+
+<style is:inline>
+  .cta-band{border-radius:8px;padding:28px;margin:44px 0 8px}
+  .cta-band__inner{max-width:560px}
+  .cta-band__btn{
+    display:inline-block;color:#fff;font-weight:700;padding:12px 24px;
+    border-radius:4px;text-decoration:none;
+  }
+  .cta-band__btn:hover{opacity:.9}
+</style>

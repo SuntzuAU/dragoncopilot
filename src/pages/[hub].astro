@@ -4,6 +4,7 @@ import AnswerBlock from '../components/AnswerBlock.astro';
 import R2Image from '../components/R2Image.astro';
 import site from '../site.config.json';
 import { getCollection } from 'astro:content';
+import ContactCTA from '../components/ContactCTA.astro';
 
 export async function getStaticPaths() {
   return site.hubs.map((h: any) => ({ params: { hub: h.slug }, props: { hub: h } }));
@@ -23,5 +24,7 @@ const pages = (await getCollection('docs', (e: any) => !e.data.draft && e.data.h
       ))}
     </ul>
     {pages.length === 0 && <p style="color:var(--muted)">No published pages in this hub yet.</p>}
+
+    <ContactCTA />
   </div>
 </BaseLayout>

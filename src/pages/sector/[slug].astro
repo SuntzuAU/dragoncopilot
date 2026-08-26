@@ -6,6 +6,7 @@ import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import SourceList from '../../components/SourceList.astro';
 import site from '../../site.config.json';
 import { getCollection } from 'astro:content';
+import ContactCTA from '../../components/ContactCTA.astro';
 
 export async function getStaticPaths() {
   const insts = await getCollection('institution');
@@ -47,5 +48,7 @@ const schema = [{
     </EvidenceTable>
 
     <SourceList ids={inst.speechFootprint.sources} />
+
+    <ContactCTA />
   </div>
 </BaseLayout>
