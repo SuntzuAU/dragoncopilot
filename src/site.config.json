@@ -22,7 +22,8 @@
       "21": "number_of_users",
       "35": "company",
       "18": "comments_about_your_needs"
-    }
+    },
+    "recaptchaKey": "6LcwIw8TAAAAACP1ysM08EhCgzd6q5JAOUR1a0Go"
   },
   "colours": {
     "primary": "#702573",

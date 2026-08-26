@@ -13,6 +13,8 @@ const formConfig = site.form || {};
 const formId = formConfig.formId || 'CHANGE_ME';           // CHANGE_ME: e.g. "289"
 const orUuid = formConfig.orUuid || 'CHANGE_ME';           // CHANGE_ME: from ActiveCampaign
 const submitText = formConfig.submitText || 'Request Information';
+// reCAPTCHA site key, only if this AC form has captcha enabled. Empty = no captcha.
+const recaptchaKey = formConfig.recaptchaKey || '';
 ---
 <div style="color:white">
   <div style="font-weight:800;font-size:20px;margin-bottom:4px">Get in touch</div>
@@ -60,6 +62,12 @@ const submitText = formConfig.submitText || 'Request Information';
           <textarea id="field18" name="field[18]" placeholder="Optionally describe your needs"></textarea>
         </div>
       </div>
+      {recaptchaKey && (
+        <div class="_form_element _full_width">
+          <label for="g-recaptcha-response" class="_form-label">Please verify your request.</label>
+          <div class="g-recaptcha" data-sitekey={recaptchaKey}></div>
+        </div>
+      )}
       <div class="_button-wrapper _full_width">
         <button id={`_form_${formId}_submit`} class="_submit" type="submit" style={`background:${c.accent};color:#fff`}>{submitText}</button>
       </div>
@@ -118,7 +126,7 @@ const submitText = formConfig.submitText || 'Request Information';
   }
 </style>
 
-<script define:vars={{ formId }}>
+<script define:vars={{ formId, recaptchaKey }}>
   window.cfields = {"21": "number_of_users", "35": "company", "18": "comments_about_your_needs"};
 
   window._show_thank_you = function(id, message, trackcmp_url, email) {
@@ -174,6 +182,19 @@ const submitText = formConfig.submitText || 'Request Information';
     head.appendChild(script);
   };
 
+  // reCAPTCHA — rendered explicitly so it works regardless of script load order.
+  if (recaptchaKey) {
+    window.recaptcha_callback = function() {
+      var boxes = document.getElementsByClassName('g-recaptcha');
+      for (var i = 0; i < boxes.length; i++) {
+        if (boxes[i].getAttribute('data-rendered')) continue;
+        boxes[i].setAttribute('data-rendered', '1');
+        grecaptcha.render(boxes[i], { sitekey: boxes[i].getAttribute('data-sitekey') });
+      }
+    };
+    window._load_script('https://www.google.com/recaptcha/api.js?onload=recaptcha_callback&render=explicit');
+  }
+
   (function() {
     if (window.location.search.indexOf('excludeform') !== -1) return false;
     var form_to_submit = document.getElementById('_form_' + formId + '_');
@@ -204,6 +225,14 @@ const submitText = formConfig.submitText || 'Request Information';
         var input = allInputs[i];
         if (input.getAttribute('required') !== null || input.name === 'email') {
           if (!validate_field(input)) no_error = false;
+        }
+      }
+      if (recaptchaKey && no_error) {
+        var token = '';
+        try { token = grecaptcha.getResponse(); } catch (err) { token = ''; }
+        if (!token) {
+          _show_error(formId, 'Please complete the verification below the form.');
+          no_error = false;
         }
       }
       if (!no_error && e) e.preventDefault();
