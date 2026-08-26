@@ -68,8 +68,8 @@
   "legal": {
     "entity": "Voice Recognition Australia",
     "resellerLine": "Voice Recognition Australia is a registered authorised reseller of Dragon products in Australia.",
-    "disclaimer": "This website is operated by Voice Recognition Australia. It is not operated by, endorsed by, affiliated with, or sponsored by Microsoft Corporation or any of its subsidiaries. Microsoft, Dragon, Dragon Copilot, Dragon Medical One, DAX and Nuance are trademarks or registered trademarks of Microsoft Corporation in the United States and other countries. All product names, logos and brands are the property of their respective owners and are used on this site for identification and reference purposes only. Such use does not imply any affiliation with or endorsement by the trademark owner.",
-    "editorial": "Information on this site is compiled from published vendor, regulatory and peer-reviewed sources. Product capability, availability, licensing terms and pricing may change without notice. Nothing on this site constitutes clinical, legal, financial or procurement advice. Verify current details with the vendor or with Voice Recognition Australia before making a purchasing decision."
+    "disclaimer": "This site is not operated by, endorsed by or affiliated with Microsoft. Dragon, Dragon Copilot and Dragon Medical One are trademarks of Microsoft Corporation.",
+    "editorial": ""
   },
   "r2Base": "https://pub-c7a09e1ddb7c45e6a38fcdca1e4b6897.r2.dev",
   "heroImage": "dragoncopilot/2026/08/25/dragon-copilot-australia-clinician-consulting-room-hero-cbbc0a47.jpg",

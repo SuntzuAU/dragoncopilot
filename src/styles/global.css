@@ -96,12 +96,9 @@ tbody tr:last-child td{border-bottom:0}
 .sources a{word-break:break-word}
 
 /* ---- Footer ---- */
-.foot{background:var(--surface);border-top:1px solid var(--border);padding:34px 0 44px;font-size:.86rem;color:var(--muted)}
-.legal{font-size:.78rem;line-height:1.6;color:var(--muted);border-top:1px solid var(--border);margin-top:20px;padding-top:16px}
-.legal p{max-width:none;margin:0 0 10px}
-.legal strong{color:var(--ink);font-weight:600}
-.foot p{max-width:none}
-.foot__notice{font-size:.8rem;border-top:1px solid var(--border);margin-top:18px;padding-top:14px}
+.foot{background:var(--surface);border-top:1px solid var(--border);padding:20px 0;font-size:.86rem;color:var(--muted)}
+.foot p{max-width:none;margin:0 0 6px}
+.legal{font-size:.72rem;line-height:1.5;color:var(--muted);max-width:none;margin:0}
 .hubgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin:26px 0}
 .hubcard{border:1px solid var(--border);border-radius:8px;padding:20px;background:var(--surface);transition:none}
 .hubcard h3{margin:0 0 6px}

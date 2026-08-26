@@ -81,12 +81,9 @@ const graph = [
   <footer class="foot">
     <div class="wrap">
       <p><strong>{site.publisher.name}</strong> — {site.tagline}.</p>
-      <div class="legal">
-        <p><strong>{site.legal.resellerLine}</strong></p>
-        <p>{site.legal.disclaimer}</p>
-        <p>{site.legal.editorial}</p>
-        <p>Content on this site last reviewed {new Date(site.lastUpdated).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}.</p>
-      </div>
+      <p class="legal">
+        {site.legal.resellerLine} {site.legal.disclaimer} Last reviewed {new Date(site.lastUpdated).toLocaleDateString('en-AU', { day: 'numeric', month: 'long', year: 'numeric' })}.
+      </p>
     </div>
   </footer>
 </body>
