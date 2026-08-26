@@ -45,7 +45,11 @@ const submitText = formConfig.submitText || 'Request Information';
           <input type="text" id="phone" name="phone" placeholder="Your Phone Number" />
         </div>
       </div>
-      <!-- CHANGE_ME: Add or remove custom fields below as needed for this form -->
+      <div class="_form_element _full_width">
+        <div class="_field-wrapper">
+          <input type="text" id="field21" name="field[21]" placeholder="Number of Users" />
+        </div>
+      </div>
       <div class="_form_element _full_width">
         <div class="_field-wrapper">
           <input type="text" id="field35" name="field[35]" placeholder="Company / Organisation" />
@@ -53,11 +57,11 @@ const submitText = formConfig.submitText || 'Request Information';
       </div>
       <div class="_form_element _full_width">
         <div class="_field-wrapper">
-          <textarea id="field18" name="field[18]" placeholder="Tell us about your needs"></textarea>
+          <textarea id="field18" name="field[18]" placeholder="Optionally describe your needs"></textarea>
         </div>
       </div>
       <div class="_button-wrapper _full_width">
-        <button id={`_form_${formId}_submit`} class="_submit" type="submit" style={`background:${c.accent};color:${c.text}`}>{submitText}</button>
+        <button id={`_form_${formId}_submit`} class="_submit" type="submit" style={`background:${c.accent};color:#fff`}>{submitText}</button>
       </div>
     </div>
     <div class="_form-thank-you" style="display:none;"></div>
@@ -115,8 +119,7 @@ const submitText = formConfig.submitText || 'Request Information';
 </style>
 
 <script define:vars={{ formId }}>
-  // CHANGE_ME: Update cfields mapping to match this form's custom fields
-  window.cfields = {"35": "company", "18": "comments_about_your_needs"};
+  window.cfields = {"21": "number_of_users", "35": "company", "18": "comments_about_your_needs"};
 
   window._show_thank_you = function(id, message, trackcmp_url, email) {
     var form = document.getElementById('_form_' + id + '_'),

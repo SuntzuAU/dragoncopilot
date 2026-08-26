@@ -3,29 +3,17 @@
   "vendor": "Shexie",
   "slug": "shexie",
   "aliases": [
-    "Shexie Platinum"
+    "Shexie Platinum",
+    "Shexie Medical Software"
   ],
   "segment": [
     "specialist",
-    "general-practice"
+    "day-surgery"
   ],
   "hosting": "hybrid",
-  "marketNote": "Australian medical practice management software used across specialist and general practice.",
-  "dragonCopilot": {
-    "status": "unknown",
-    "ambient": "unknown",
-    "dictation": "unknown",
-    "note": "[VERIFY] No public Microsoft documentation of a Dragon Copilot integration located as at 25 August 2026.",
-    "grade": "unverified",
-    "sources": []
-  },
-  "dragonMedicalOne": {
-    "status": "native",
-    "note": "Voice Recognition Australia, an authorised Australian reseller, states that Dragon Medical One dictates directly into this system. This is a reseller statement rather than Microsoft documentation, so it is graded medium and should be confirmed for a specific site configuration.",
-    "grade": "medium",
-    "sources": [
-      158
-    ]
-  },
-  "verified": "2026-08-25"
+  "status": "pending",
+  "order": 102,
+  "marketNote": "An Australian specialist and surgical practice management system.",
+  "note": "Shexie has published a Dragon dictation capability in its mobile web app. The desktop Dragon Medical One position is not yet confirmed. Contact Voice Recognition Australia for the current position.",
+  "sources": []
 }

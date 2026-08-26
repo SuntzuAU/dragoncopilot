@@ -1,0 +1,18 @@
+{
+  "name": "Orion Health",
+  "vendor": "Orion Health",
+  "slug": "orion-health",
+  "aliases": [
+    "Orion",
+    "Amadeus"
+  ],
+  "segment": [
+    "hospital"
+  ],
+  "hosting": "hybrid",
+  "status": "pending",
+  "order": 109,
+  "marketNote": "Health information and clinical portal software used in Australian and New Zealand health services.",
+  "note": "Not yet confirmed. Contact Voice Recognition Australia for the current position.",
+  "sources": []
+}

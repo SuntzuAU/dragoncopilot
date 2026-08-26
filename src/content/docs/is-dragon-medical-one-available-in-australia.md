@@ -1,16 +1,16 @@
 ---
 title: "Dragon Medical One in Australia"
 question: "Is Dragon Medical One available in Australia?"
-answer: "Yes. Dragon Medical One is commercially available in Australia and has been for years, sold through authorised local resellers. Microsoft runs a Dragon Medical One learning series specifically for Australia and New Zealand. This is the opposite of the Dragon Copilot position, which has no confirmed Australian general availability."
+answer: "Yes. Dragon Medical One is commercially available in Australia and has been for years, sold through authorised local resellers. Microsoft runs a Dragon Medical One learning series specifically for Australia and New Zealand. Dragon Copilot is coming to the Australian market, with no release date announced yet."
 metaDescription: "Dragon Medical One is available in Australia. What that means, how it differs from Dragon Copilot's Australian position, and how it is bought locally."
-hub: australia
+hub: dragon-medical-one
 verified: "2026-08-25"
 primaryKeyword: "Dragon Medical One Australia"
 secondaryKeywords: ["is Dragon Medical One available in Australia", "Dragon Medical One Australian availability"]
 order: 10
 faqs:
   - q: "Is Dragon Copilot available in Australia too?"
-    a: "Not on the same footing. As at 25 August 2026 there is no confirmed Australian general availability for Dragon Copilot, and Microsoft's published physician availability list does not include Australia. Dragon Medical One and Dragon Copilot are in genuinely different positions here, and conflating them is the most common error in Australian coverage."
+    a: "Not yet. Dragon Copilot is coming to the Australian market, but Microsoft has not announced an Australian release date. Dragon Medical One is available here today. Register your interest with Voice Recognition Australia and we will contact you when Dragon Copilot is released in Australia."
   - q: "Does Microsoft support Dragon Medical One in Australia?"
     a: "Yes. Microsoft publishes a Dragon Medical One learning series aimed specifically at Australia and New Zealand, covering fundamentals, voice training, templates and step-by-step commands for EMR automation. Dragon Copilot is not mentioned anywhere in that Australian and New Zealand material."
   - q: "How is Dragon Medical One bought in Australia?"
@@ -36,8 +36,8 @@ Australia for years through authorised resellers, it has a local support ecosyst
 maintains Australian and New Zealand specific enablement material for it.
 
 Dragon Copilot is the newer unified product that brings ambient documentation and generative AI
-together with dictation. Its published geography is narrower. As at 25 August 2026, Australia is
-not on Microsoft's list of countries with physician availability.
+together with dictation. It is coming to the Australian market, but Microsoft has not yet announced an
+Australian release date.
 
 So a clinician in Brisbane asking "can I buy this" gets a straightforward yes for one product and
 a considerably more complicated answer for the other.

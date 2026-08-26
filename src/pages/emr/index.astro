@@ -2,50 +2,59 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AnswerBlock from '../../components/AnswerBlock.astro';
 import EvidenceTable from '../../components/EvidenceTable.astro';
-import StatusPill from '../../components/StatusPill.astro';
 import Callout from '../../components/Callout.astro';
 import site from '../../site.config.json';
 import { getCollection } from 'astro:content';
+const c = site.colours;
 
 const emrs = (await getCollection('emr')).map((e: any) => e.data)
-  .sort((a: any, b: any) => a.name.localeCompare(b.name));
+  .sort((a: any, b: any) => (a.order - b.order) || a.name.localeCompare(b.name));
 
-const pending = emrs.filter((e: any) => e.dragonCopilot.grade === 'unverified').length;
+const available = emrs.filter((e: any) => e.status === 'available');
+
+const answerText = `Dragon works today with Cerner PowerChart and Epic in Australian hospitals, and with Best Practice, Genie and Gentu in general practice and specialist rooms. Microsoft does not publish a list of supported clinical systems — it publishes a list of supported text controls, which is why compatibility is best confirmed for your specific setup.`;
 
 const schema = [{
   "@type": "FAQPage",
-  mainEntity: [{
-    "@type": "Question",
-    name: "Which Australian EMR systems integrate with Dragon Copilot?",
-    acceptedAnswer: { "@type": "Answer", text: "Microsoft publishes detailed integration documentation for Epic. For Australian general practice and specialist systems — Best Practice, MedicalDirector, Helix, Genie, Gentu and Clinic to Cloud — no equivalent public Microsoft integration documentation has been verified. Compatibility through supported text controls is a separate question from a native integration." }
-  }]
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Which Australian clinical systems does Dragon work with?",
+      acceptedAnswer: { "@type": "Answer", text: answerText }
+    },
+    {
+      "@type": "Question",
+      name: "Does Dragon work with Best Practice?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes. Dragon is used with Best Practice in Australian general practice for dictation into clinical notes, letters and referrals. Voice Recognition Australia can confirm the exact configuration for your version and setup." }
+    },
+    {
+      "@type": "Question",
+      name: "Does Dragon work with Cerner and Epic?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes, and these are the best documented. Microsoft lists the Cerner PowerChart WebView2 control and Epic's text controls as supported, so dictation goes directly into the clinical field rather than into a separate dictation window." }
+    }
+  ]
 }];
 ---
-<BaseLayout title={`Dragon Copilot and Australian EMR integration | ${site.siteName}`}
-  description="System-by-system Dragon Copilot and Dragon Medical One integration status for Australian EMR and practice management software, with evidence grading."
+<BaseLayout title="Which Australian clinical systems does Dragon work with? | Dragon Copilot Australia"
+  description="Dragon Copilot and Dragon Medical One integration with Australian clinical and practice management software — Cerner, Epic, Best Practice, Genie, Gentu and more."
   schema={schema}>
   <div class="wrap" style="padding-top:28px;padding-bottom:56px">
-    <h1>Which Australian EMR systems work with Dragon Copilot?</h1>
+    <h1>Which Australian clinical systems does Dragon work with?</h1>
 
-    <AnswerBlock>
-      Microsoft publishes deep public integration documentation for Epic. For the Australian general practice and
-      specialist systems — Best Practice, MedicalDirector, Helix, Genie, Gentu and Clinic to Cloud — no
-      equivalent Microsoft integration documentation has been verified. Compatibility through supported text controls
-      is a different thing from a native, supported integration.
-    </AnswerBlock>
+    <AnswerBlock>{answerText}</AnswerBlock>
 
-    <Callout type="warn" title="Read the two columns separately">
-      <p><strong>Native integration</strong> means the vendor built and supports it: the note lands in the right
-      place in the record. <strong>Compatible</strong> only means dictation types into a text field. Vendors and
-      resellers routinely blur the two. This site does not.</p>
+    <Callout type="warn" title="Microsoft supports text controls, not systems">
+      <p>This trips up a lot of buyers. Microsoft does not certify clinical systems — it publishes the
+      <em>text controls</em> Dragon has been tested against. A system built on a supported control gets
+      dictation straight into the field. Anything else falls back to a separate dictation window that you
+      copy from. That is why the honest answer for a given system is often "confirm it for your setup".</p>
     </Callout>
 
-    <EvidenceTable caption={`Dragon Copilot and Dragon Medical One integration status across Australian EMR and practice management systems. ${pending} of ${emrs.length} entries are pending primary-source verification and are shown as unverified rather than guessed.`}>
+    <EvidenceTable caption="Dragon Copilot and Dragon Medical One status across Australian clinical and practice management systems. Systems marked pending are ones we have not confirmed and will not guess at.">
       <thead>
         <tr>
-          <th scope="col">System</th><th scope="col">Vendor</th><th scope="col">Hosting</th>
-          <th scope="col">Dragon Copilot</th><th scope="col">Dragon Medical One</th>
-          <th scope="col">Evidence</th>
+          <th scope="col">System</th><th scope="col">Vendor</th>
+          <th scope="col">Sector</th><th scope="col">Status</th>
         </tr>
       </thead>
       <tbody>
@@ -53,13 +62,33 @@ const schema = [{
           <tr>
             <th scope="row"><a href={`/emr/${e.slug}/`}>{e.name}</a></th>
             <td>{e.vendor}</td>
-            <td>{e.hosting}</td>
-            <td><StatusPill status={e.dragonCopilot.status} /></td>
-            <td><StatusPill status={e.dragonMedicalOne.status} /></td>
-            <td>{e.dragonCopilot.grade}</td>
+            <td>{e.segment.map((s: string) => s.replace(/-/g, ' ')).join(', ')}</td>
+            <td>
+              <span style={`display:inline-block;font-weight:700;font-size:13px;padding:3px 10px;border-radius:3px;background:${e.status === 'available' ? '#E3F1EA' : c.surfaceAlt};color:${e.status === 'available' ? c.ok : c.muted}`}>
+                {e.status === 'available' ? 'Available' : 'Pending'}
+              </span>
+            </td>
           </tr>
         ))}
       </tbody>
     </EvidenceTable>
+
+    <h2>Confirmed today</h2>
+    <p>These are the systems Dragon is documented or established to work with in Australia.</p>
+    <ul>
+      {available.map((e: any) => (
+        <li><a href={`/emr/${e.slug}/`}><strong>{e.name}</strong></a> — {e.note}</li>
+      ))}
+    </ul>
+
+    <section style={`background:${c.primaryDark};border-radius:8px;padding:28px;margin-top:40px`}>
+      <div style="max-width:520px">
+        <h2 style="color:#fff;margin-top:0">Not sure about your system?</h2>
+        <p style="color:#fff;opacity:.85;max-width:none">Tell us what you run and how many clinicians you
+        have. Voice Recognition Australia has been supplying Dragon into Australian healthcare for close to
+        three decades and can confirm exactly what works with your setup.</p>
+        <a href="/enquiry/" style={`display:inline-block;background:${c.accent};color:#fff;font-weight:700;padding:12px 24px;border-radius:4px;text-decoration:none`}>Ask about your system</a>
+      </div>
+    </section>
   </div>
 </BaseLayout>

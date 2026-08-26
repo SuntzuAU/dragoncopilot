@@ -1,0 +1,18 @@
+{
+  "name": "MEDITECH",
+  "vendor": "MEDITECH",
+  "slug": "meditech",
+  "aliases": [
+    "Meditech Expanse",
+    "MEDITECH Expanse"
+  ],
+  "segment": [
+    "hospital"
+  ],
+  "hosting": "hybrid",
+  "status": "pending",
+  "order": 104,
+  "marketNote": "A hospital electronic medical record used in Australian and New Zealand health services.",
+  "note": "Microsoft names a MEDITECH text control in its Dragon Copilot supported controls list, which is a promising sign for Australian MEDITECH sites. The Australian position is not yet confirmed. Contact Voice Recognition Australia.",
+  "sources": []
+}

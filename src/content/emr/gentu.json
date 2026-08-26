@@ -1,24 +1,18 @@
 {
   "name": "Gentu",
-  "vendor": "Genie Solutions",
+  "vendor": "Magentus",
   "slug": "gentu",
-  "aliases": [],
-  "segment": ["specialist"],
+  "aliases": [
+    "Gentu cloud",
+    "Genie Solutions Gentu"
+  ],
+  "segment": [
+    "specialist"
+  ],
   "hosting": "cloud",
-  "marketNote": "Cloud specialist practice management from Genie Solutions.",
-  "dragonCopilot": {
-    "status": "unknown",
-    "ambient": "unknown",
-    "dictation": "unknown",
-    "note": "[VERIFY]",
-    "grade": "unverified",
-    "sources": []
-  },
-  "dragonMedicalOne": {
-    "status": "unknown",
-    "note": "[VERIFY]",
-    "grade": "unverified",
-    "sources": []
-  },
-  "verified": "2026-08-25"
+  "status": "available",
+  "order": 5,
+  "marketNote": "Magentus's cloud specialist practice management platform, the cloud counterpart to Genie.",
+  "note": "Same position as Genie — Magentus lists Dragon Medical One for Gentu and maintains a dedicated Dragon Medical One support section for it. Magentus also offers a separate native dictation feature built on Nuance speech technology; the two are different products, so confirm which one you are buying.",
+  "sources": []
 }

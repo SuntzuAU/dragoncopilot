@@ -2,23 +2,17 @@
   "name": "Clinic to Cloud",
   "vendor": "Clinic to Cloud",
   "slug": "clinic-to-cloud",
-  "aliases": ["C2C"],
-  "segment": ["specialist"],
+  "aliases": [
+    "ClinicToCloud",
+    "C2C"
+  ],
+  "segment": [
+    "specialist"
+  ],
   "hosting": "cloud",
-  "marketNote": "Cloud specialist practice management system with an established dictation and transcription workflow of its own.",
-  "dragonCopilot": {
-    "status": "unknown",
-    "ambient": "unknown",
-    "dictation": "unknown",
-    "note": "[VERIFY] Note the vendor operates its own dictation workflow — the competitive framing on this page needs care.",
-    "grade": "unverified",
-    "sources": []
-  },
-  "dragonMedicalOne": {
-    "status": "unknown",
-    "note": "[VERIFY]",
-    "grade": "unverified",
-    "sources": []
-  },
-  "verified": "2026-08-25"
+  "status": "pending",
+  "order": 103,
+  "marketNote": "An Australian cloud practice management system used in private specialist practice.",
+  "note": "Not yet confirmed. Clinic to Cloud has its own built-in dictation workflow. Contact Voice Recognition Australia for the current position on using Dragon alongside it.",
+  "sources": []
 }

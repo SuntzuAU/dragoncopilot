@@ -1,24 +1,19 @@
 {
-  "name": "Oracle Health (Cerner)",
-  "vendor": "Oracle",
+  "name": "Cerner",
+  "vendor": "Oracle Health",
   "slug": "cerner",
-  "aliases": ["Cerner", "Cerner Millennium", "Oracle Health Millennium"],
-  "segment": ["hospital"],
+  "aliases": [
+    "Oracle Cerner",
+    "PowerChart",
+    "Oracle Health"
+  ],
+  "segment": [
+    "hospital"
+  ],
   "hosting": "hybrid",
-  "marketNote": "Major hospital EMR with significant Australian public hospital deployment, including large state health installations.",
-  "dragonCopilot": {
-    "status": "unknown",
-    "ambient": "unknown",
-    "dictation": "unknown",
-    "note": "[VERIFY] Microsoft's public integration documentation is markedly deeper for Epic than for other hospital EMRs. Do not infer parity.",
-    "grade": "unverified",
-    "sources": []
-  },
-  "dragonMedicalOne": {
-    "status": "unknown",
-    "note": "[VERIFY]",
-    "grade": "unverified",
-    "sources": []
-  },
-  "verified": "2026-08-25"
+  "status": "available",
+  "order": 1,
+  "marketNote": "The dominant hospital electronic medical record across Australian public health, including Queensland Health, NSW Health services and several other state deployments.",
+  "note": "Dragon works inside Cerner PowerChart. Microsoft lists the Cerner PowerChart WebView2 control as a supported text editor for Dragon Medical One, which means dictation goes straight into the clinical field rather than into a separate dictation window.",
+  "sources": []
 }

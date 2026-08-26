@@ -1,0 +1,18 @@
+{
+  "name": "Dedalus",
+  "vendor": "Dedalus",
+  "slug": "dedalus",
+  "aliases": [
+    "Dedalus Healthcare",
+    "ORBIS"
+  ],
+  "segment": [
+    "hospital"
+  ],
+  "hosting": "hybrid",
+  "status": "pending",
+  "order": 106,
+  "marketNote": "A hospital clinical information system vendor with Australian health service deployments.",
+  "note": "Microsoft names Dedalus in its Dragon Copilot supported controls list. The Australian position is not yet confirmed. Contact Voice Recognition Australia.",
+  "sources": []
+}

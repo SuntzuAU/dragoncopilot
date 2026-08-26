@@ -14,7 +14,7 @@ faqs:
   - q: "Does Dragon Copilot still do ordinary dictation?"
     a: "Yes. Front-end dictation remains part of the product and is included even in the lower Flex licensing option. A clinician who wants to keep dictating exactly as they do today can do so within Dragon Copilot."
   - q: "Which one should an Australian practice be looking at?"
-    a: "As at 25 August 2026 the question is partly settled by availability rather than preference: Dragon Medical One is commercially available in Australia and Dragon Copilot has no confirmed Australian general availability. That may change, and the comparison below is what matters when it does."
+    a: "Today the question is settled by availability: Dragon Medical One is available in Australia now, and Dragon Copilot is coming to the Australian market with no release date announced yet. Starting on Dragon Medical One is not a dead end — Microsoft publishes a migration path that carries commands, vocabularies, templates and auto-texts across."
 sources: [1, 12, 14, 125, 126, 156]
 internalLinks:
   - to: "/is-dragon-medical-one-available-in-australia/"
@@ -72,8 +72,8 @@ If the question is "which can I have", the answer in Australia is currently more
 [Dragon Medical One's Australian availability](/is-dragon-medical-one-available-in-australia/) is
 established, and it is bought here through an authorised
 [Dragon Medical One reseller Australia](https://www.voicerecognition.com.au/pages/dragon-medical-one)
-rather than direct from Microsoft. Dragon Copilot has no confirmed Australian general availability
-as at 25 August 2026.
+rather than direct from Microsoft. Dragon Copilot is coming to the Australian market, but Microsoft
+has not yet announced an Australian release date.
 
 <aside class="callout">
 <p><strong>Dragon Medical One has not been announced as end of life.</strong> Microsoft positioning

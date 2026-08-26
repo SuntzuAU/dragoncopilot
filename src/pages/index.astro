@@ -2,27 +2,94 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AnswerBlock from '../components/AnswerBlock.astro';
 import R2Image from '../components/R2Image.astro';
+import ACForm from '../components/ACForm.astro';
 import site from '../site.config.json';
-import { getCollection } from 'astro:content';
-const docs = (await getCollection('docs', (e: any) => !e.data.draft))
-  .sort((a: any, b: any) => a.data.order - b.data.order);
+const c = site.colours;
+
+const schema = [{
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Is Microsoft Dragon Copilot coming to Australia?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes. Microsoft Dragon Copilot is coming to the Australian market. Microsoft has not announced an Australian release date. Voice Recognition Australia is a registered authorised Dragon reseller and will confirm availability, licensing and EMR integration for Australian organisations as it is released." }
+    },
+    {
+      "@type": "Question",
+      name: "What is Microsoft Dragon Copilot?",
+      acceptedAnswer: { "@type": "Answer", text: "Dragon Copilot is Microsoft's AI assistant for clinicians. It listens to the consultation with patient consent, drafts the clinical note automatically, answers questions from trusted medical sources, and handles follow-up tasks such as referral letters and orders. It combines dictation with ambient documentation in one product." }
+    },
+    {
+      "@type": "Question",
+      name: "What can Australian clinicians use today?",
+      acceptedAnswer: { "@type": "Answer", text: "Dragon Medical One is available in Australia now, running on Australian infrastructure, and is supplied and supported by Voice Recognition Australia. Microsoft documents a migration path that carries commands, vocabularies, templates and auto-texts across to Dragon Copilot." }
+    }
+  ]
+}];
 ---
-<BaseLayout title={`${site.siteName} — Microsoft Dragon Copilot reference guide`}
-  description="An independent Australian reference guide to Microsoft Dragon Copilot and Dragon Medical One: licensing options, EMR integration, data residency, consent and the published evidence.">
+<BaseLayout title="Microsoft Dragon Copilot Australia | Coming to the Australian market"
+  description="Microsoft Dragon Copilot is coming to Australia. What it does, how it is licensed, which clinical systems it works with, and what Australian clinicians can use today. From Voice Recognition Australia, authorised Dragon reseller."
+  schema={schema}>
+
   <div class="wrap">
     <section class="hero">
       <div>
-        <h1>Microsoft Dragon Copilot, explained for Australian healthcare</h1>
+        <div style={`display:inline-block;background:${c.primaryLight};color:${c.primaryDark};font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;padding:6px 12px;border-radius:3px;margin-bottom:16px`}>
+          Coming to Australia
+        </div>
+        <h1>Microsoft Dragon Copilot is coming to the Australian market</h1>
         <AnswerBlock>
-          An independent Australian reference guide to Microsoft Dragon Copilot and Dragon Medical One,
-          published by {site.publisher.name}, a registered authorised reseller. Every claim carries a
-          verification date and a primary source, so you can see what Microsoft actually says — and
-          what is still unresolved.
+          Dragon Copilot is Microsoft's AI assistant for clinicians. It listens to the consultation, writes
+          the clinical note, and takes care of the paperwork that follows — so the record is finished before
+          the patient leaves the room. Microsoft has not announced an Australian release date. Register below
+          and we will contact you when it becomes available here.
         </AnswerBlock>
+        <a href="#register" style={`display:inline-block;background:${c.primary};color:#fff;font-weight:600;padding:13px 26px;border-radius:4px;text-decoration:none;margin-top:6px`}>
+          Register your interest
+        </a>
       </div>
       <R2Image src={site.heroImage} alt={site.heroImageAlt} ratio="16 / 9" eager={true} />
     </section>
 
+    <h2>What Dragon Copilot does</h2>
+    <div class="hubgrid" style="margin-top:18px">
+      <div class="hubcard">
+        <h3>Writes the note while you consult</h3>
+        <p>With the patient's consent, Dragon Copilot listens to the conversation and drafts a structured
+        clinical note from it. The clinician reviews and signs — the AI never writes to the record unchecked.</p>
+      </div>
+      <div class="hubcard">
+        <h3>Dictation and ambient in one product</h3>
+        <p>Everything Dragon Medical One does today — dictation, custom vocabulary, auto-texts, voice
+        commands — plus ambient documentation, in a single application rather than two.</p>
+      </div>
+      <div class="hubcard">
+        <h3>Handles what comes next</h3>
+        <p>Referral letters, orders and summaries drafted from the same conversation, and answers to clinical
+        questions drawn from trusted medical sources.</p>
+      </div>
+    </div>
+
+    <section style={`background:${c.surface};border-radius:8px;padding:30px;margin:44px 0`}>
+      <h2 style="margin-top:0">Available in Australia today: Dragon Medical One</h2>
+      <p style="max-width:none">
+        While Dragon Copilot is on its way, Australian clinicians are not waiting. <strong>Dragon Medical
+        One</strong> is available here now, runs on Australian infrastructure, and is supplied and supported
+        by Voice Recognition Australia. It is the clinical dictation standard used across Australian
+        hospitals, specialist rooms and general practice.
+      </p>
+      <p style="max-width:none">
+        It is also the natural starting point. Microsoft documents a migration path from Dragon Medical One
+        to Dragon Copilot that carries your saved commands, vocabularies, templates and auto-texts across —
+        so the work you put in now is not lost when Copilot arrives.
+      </p>
+      <p style="margin-bottom:0">
+        <a href="/dragon-medical-one/">Read about Dragon Medical One in Australia</a> &nbsp;·&nbsp;
+        <a href="https://www.voicerecognition.com.au/pages/dragon-medical-one" rel="noopener">Dragon Medical One from Voice Recognition Australia</a>
+      </p>
+    </section>
+
+    <h2>Explore</h2>
     <div class="hubgrid">
       {site.hubs.map((h: any) => (
         <div class="hubcard">
@@ -34,16 +101,24 @@ const docs = (await getCollection('docs', (e: any) => !e.data.draft))
       <div class="hubcard">
         <div class="hubcard__img"><R2Image src={site.sectorImage} alt={site.sectorImageAlt} /></div>
         <h3><a href="/sector/">Government &amp; hospitals</a></h3>
-        <p>How Australian health departments and hospital networks actually procure clinical speech recognition.</p>
+        <p>How Australian health departments and hospital networks procure clinical speech recognition.</p>
       </div>
       <div class="hubcard">
-        <h3><a href="/emr/">Australian EMR integration</a></h3>
-        <p>System-by-system integration status across Australian clinical and practice management software.</p>
+        <h3><a href="/emr/">Clinical software integration</a></h3>
+        <p>Which Australian clinical and practice management systems Dragon works with.</p>
       </div>
     </div>
 
-    <h2>All pages</h2>
-    <ul>{docs.map((d: any) => <li><a href={`/${d.slug}/`}>{d.data.question}</a></li>)}</ul>
-    <p style="padding-bottom:40px"></p>
+    <section id="register" style={`background:${c.primaryDark};border-radius:8px;padding:30px;margin:44px 0 56px`}>
+      <div style="max-width:520px">
+        <h2 style="color:#fff;margin-top:0">Be told the day it lands in Australia</h2>
+        <p style="color:#fff;opacity:.85;max-width:none">
+          Tell us your clinical software and how many clinicians you have. We will confirm Dragon Copilot
+          availability and licensing for your organisation as soon as it is released in Australia — and in
+          the meantime, what you can do with Dragon Medical One today.
+        </p>
+        <ACForm />
+      </div>
+    </section>
   </div>
 </BaseLayout>

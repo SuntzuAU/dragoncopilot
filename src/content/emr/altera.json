@@ -1,0 +1,20 @@
+{
+  "name": "Altera",
+  "vendor": "Altera Digital Health",
+  "slug": "altera",
+  "aliases": [
+    "Allscripts",
+    "Sunrise",
+    "Altera Sunrise",
+    "Allscripts SCM"
+  ],
+  "segment": [
+    "hospital"
+  ],
+  "hosting": "hybrid",
+  "status": "pending",
+  "order": 107,
+  "marketNote": "Hospital clinical systems, formerly Allscripts, used in Australian health services.",
+  "note": "Microsoft names Allscripts and Altera text controls in its Dragon Medical One supported text editor list. The Australian position is not yet confirmed. Contact Voice Recognition Australia.",
+  "sources": []
+}

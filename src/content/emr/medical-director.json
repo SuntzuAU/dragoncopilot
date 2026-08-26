@@ -5,29 +5,17 @@
   "aliases": [
     "MD",
     "MedicalDirector Clinical",
-    "Pracsoft"
+    "Pracsoft",
+    "MedicalDirector Bluechip"
   ],
   "segment": [
     "general-practice",
     "specialist"
   ],
   "hosting": "on-premise",
-  "marketNote": "The other long-established Australian general practice clinical system, now owned by Telstra Health. Helix is its cloud-native sibling product.",
-  "dragonCopilot": {
-    "status": "unknown",
-    "ambient": "unknown",
-    "dictation": "unknown",
-    "note": "[VERIFY] No public Microsoft documentation located as at 25 August 2026.",
-    "grade": "unverified",
-    "sources": []
-  },
-  "dragonMedicalOne": {
-    "status": "native",
-    "note": "Voice Recognition Australia, an authorised Australian reseller, states that Dragon Medical One dictates directly into this system. This is a reseller statement rather than Microsoft documentation, so it is graded medium and should be confirmed for a specific site configuration.",
-    "grade": "medium",
-    "sources": [
-      158
-    ]
-  },
-  "verified": "2026-08-25"
+  "status": "pending",
+  "order": 100,
+  "marketNote": "One of the two largest general practice clinical systems in Australia, now part of Telstra Health.",
+  "note": "We have not confirmed a documented Dragon integration for MedicalDirector. Contact Voice Recognition Australia for the current position on your version.",
+  "sources": []
 }

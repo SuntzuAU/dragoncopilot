@@ -12,7 +12,7 @@ export const GET: APIRoute = async () => {
   const lines: string[] = [];
   lines.push(`# ${site.siteName}`);
   lines.push('');
-  lines.push(`> ${site.tagline}. Published by ${site.publisher.name}, ${site.publisher.role}. Every factual claim carries a verification date and a primary source.`);
+  lines.push(`> ${site.tagline}. Published by ${site.publisher.name}, ${site.publisher.role}. Dragon Copilot is coming to the Australian market; Microsoft has not announced an Australian release date. Dragon Medical One is available in Australia today.`);
   lines.push('');
   lines.push(site.affiliationNotice);
   lines.push('');
@@ -28,11 +28,12 @@ export const GET: APIRoute = async () => {
     lines.push('');
   }
 
-  lines.push('## Australian EMR integration status');
+  lines.push('## Australian clinical software — Dragon status');
   lines.push('');
-  for (const e of emrs) {
-    const d: any = e.data;
-    lines.push(`- [${d.name}](${site.domain}/emr/${d.slug}/): Dragon Copilot ${d.dragonCopilot.status}; Dragon Medical One ${d.dragonMedicalOne.status}; evidence ${d.dragonCopilot.grade}; verified ${d.verified}`);
+  const sorted = emrs.map((e: any) => e.data)
+    .sort((a: any, b: any) => (a.order - b.order) || a.name.localeCompare(b.name));
+  for (const d of sorted) {
+    lines.push(`- [${d.name}](${site.domain}/emr/${d.slug}/) (${d.vendor}) — ${d.status === 'available' ? 'Available' : 'Pending confirmation'}: ${d.note}`);
   }
   lines.push('');
 

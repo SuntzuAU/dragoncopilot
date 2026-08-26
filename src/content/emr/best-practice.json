@@ -4,30 +4,18 @@
   "slug": "best-practice",
   "aliases": [
     "Bp Premier",
+    "Bp",
     "Bp Omni",
-    "BP"
+    "BP Software"
   ],
   "segment": [
     "general-practice",
     "specialist"
   ],
-  "hosting": "hybrid",
-  "marketNote": "One of the two dominant Australian general practice clinical systems. Bp Premier is the established Windows product; Bp Omni is the cloud successor.",
-  "dragonCopilot": {
-    "status": "unknown",
-    "ambient": "unknown",
-    "dictation": "unknown",
-    "note": "[VERIFY] No public Microsoft documentation of a Dragon Copilot integration with Best Practice was located in the 25 August 2026 research. Do not publish a status until verified against a primary source.",
-    "grade": "unverified",
-    "sources": []
-  },
-  "dragonMedicalOne": {
-    "status": "native",
-    "note": "Voice Recognition Australia, an authorised Australian reseller, states that Dragon Medical One dictates directly into this system. This is a reseller statement rather than Microsoft documentation, so it is graded medium and should be confirmed for a specific site configuration.",
-    "grade": "medium",
-    "sources": [
-      158
-    ]
-  },
-  "verified": "2026-08-25"
+  "hosting": "on-premise",
+  "status": "available",
+  "order": 3,
+  "marketNote": "The most widely used clinical software in Australian general practice, with a very large installed base across GP clinics nationally.",
+  "note": "Dragon is used with Best Practice in Australian general practice for dictation into clinical notes, letters and referrals. Confirm the exact configuration for your version and setup with Voice Recognition Australia before deploying.",
+  "sources": []
 }

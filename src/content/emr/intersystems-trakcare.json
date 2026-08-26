@@ -1,0 +1,19 @@
+{
+  "name": "InterSystems TrakCare",
+  "vendor": "InterSystems",
+  "slug": "intersystems-trakcare",
+  "aliases": [
+    "TrakCare",
+    "InterSystems",
+    "Trak"
+  ],
+  "segment": [
+    "hospital"
+  ],
+  "hosting": "hybrid",
+  "status": "pending",
+  "order": 105,
+  "marketNote": "A hospital and health service platform used in Australian state health systems, notably in Western Australia.",
+  "note": "Microsoft names an InterSystems browser text control in its Dragon Copilot supported controls list. The Australian TrakCare position is not yet confirmed. Contact Voice Recognition Australia.",
+  "sources": []
+}

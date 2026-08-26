@@ -2,23 +2,16 @@
   "name": "Helix",
   "vendor": "Telstra Health",
   "slug": "helix",
-  "aliases": ["MedicalDirector Helix"],
-  "segment": ["general-practice"],
+  "aliases": [
+    "MedicalDirector Helix"
+  ],
+  "segment": [
+    "general-practice"
+  ],
   "hosting": "cloud",
-  "marketNote": "Cloud-native Australian general practice system from the MedicalDirector stable. Browser-delivered, which changes the dictation integration question entirely — see the supported edit controls page.",
-  "dragonCopilot": {
-    "status": "unknown",
-    "ambient": "unknown",
-    "dictation": "unknown",
-    "note": "[VERIFY] Browser-based systems depend on Microsoft's supported edit control list rather than a native build. Verify against that list before publishing.",
-    "grade": "unverified",
-    "sources": [36]
-  },
-  "dragonMedicalOne": {
-    "status": "unknown",
-    "note": "[VERIFY]",
-    "grade": "unverified",
-    "sources": []
-  },
-  "verified": "2026-08-25"
+  "status": "pending",
+  "order": 101,
+  "marketNote": "Telstra Health's cloud-native general practice platform, run entirely in the browser.",
+  "note": "Not yet confirmed. Helix runs in the browser, so dictation behaviour depends on browser control support rather than a desktop integration. Contact Voice Recognition Australia for the current position.",
+  "sources": []
 }

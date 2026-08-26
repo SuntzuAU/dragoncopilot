@@ -35,7 +35,7 @@ const docs = defineCollection({
     /** 40-55 words. The extractable answer. This is what gets cited. */
     answer: z.string(),
     metaDescription: z.string().max(160),
-    hub: z.enum(['product', 'australia', 'compliance', 'evidence']),
+    hub: z.enum(['product', 'dragon-medical-one', 'compliance']),
     /** Date the claims on this page were last checked against source. */
     verified: z.string(),
     primaryKeyword: z.string(),
@@ -65,21 +65,15 @@ const emr = defineCollection({
     segment: z.array(z.enum(['general-practice', 'specialist', 'allied-health', 'hospital', 'day-surgery'])),
     hosting: z.enum(['cloud', 'on-premise', 'hybrid', 'unknown']),
     marketNote: z.string(),
-    dragonCopilot: z.object({
-      status: integrationStatus,
-      ambient: integrationStatus,
-      dictation: integrationStatus,
-      note: z.string(),
-      grade: evidenceGrade,
-      sources: z.array(z.number()).default([])
-    }),
-    dragonMedicalOne: z.object({
-      status: integrationStatus,
-      note: z.string(),
-      grade: evidenceGrade,
-      sources: z.array(z.number()).default([])
-    }),
-    verified: z.string()
+    /** Simple two-state status shown to readers. 'available' = Dragon works with this
+     *  system today and there is a documented basis for saying so. 'pending' = we have
+     *  not confirmed it and will not guess. */
+    status: z.enum(['available', 'pending']),
+    /** What Dragon does with this system, in plain language. */
+    note: z.string(),
+    /** Lower sorts first. Confirmed systems lead the table. */
+    order: z.number().default(100),
+    sources: z.array(z.number()).default([])
   })
 });
 

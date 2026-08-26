@@ -2,23 +2,18 @@
   "name": "Epic",
   "vendor": "Epic Systems",
   "slug": "epic",
-  "aliases": ["Epic Hyperdrive", "Haiku", "Canto"],
-  "segment": ["hospital"],
+  "aliases": [
+    "Epic Hyperdrive",
+    "Epic Systems",
+    "Hyperspace"
+  ],
+  "segment": [
+    "hospital"
+  ],
   "hosting": "hybrid",
-  "marketNote": "Hospital EMR with a growing Australian footprint across major metropolitan health services.",
-  "dragonCopilot": {
-    "status": "native",
-    "ambient": "native",
-    "dictation": "native",
-    "note": "Microsoft publishes an unusually deep public integration surface for Epic, covering Hyperdrive, the Haiku and Canto mobile clients, SmartSections, specialty note behaviour and diagnoses/orders. Treat Australian availability as a separate question from integration depth — the integration existing does not mean the product is commercially available here.",
-    "grade": "very-high",
-    "sources": [54, 128, 129]
-  },
-  "dragonMedicalOne": {
-    "status": "native",
-    "note": "Long-established integration. Confirm the current Australian deployment position before publishing specifics.",
-    "grade": "high",
-    "sources": [14]
-  },
-  "verified": "2026-08-25"
+  "status": "available",
+  "order": 2,
+  "marketNote": "Used by major Australian health services and expanding, including large metropolitan hospital networks moving off legacy systems.",
+  "note": "The deepest integration Microsoft publishes. Epic's text controls and Epic Hyperdrive are both named as supported, and Microsoft publishes a dedicated Dragon Copilot guide for Epic covering an embedded window inside the encounter and SmartSections that place the drafted note into the Epic template.",
+  "sources": []
 }

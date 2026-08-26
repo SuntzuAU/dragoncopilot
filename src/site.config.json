@@ -4,20 +4,25 @@
   "siteType": "reference",
   "siteId": "dragoncopilot",
   "googleAnalyticsId": "",
-  "lastUpdated": "2026-08-25",
+  "lastUpdated": "2026-08-26",
   "tagline": "An Australian reference guide to Microsoft Dragon Copilot and Dragon Medical One",
   "publisher": {
     "name": "Voice Recognition Australia",
     "url": "https://www.voicerecognition.com.au",
-    "role": "Nuance Platinum-tier authorised reseller",
+    "role": "registered authorised Dragon reseller",
     "roleShort": "authorised Dragon reseller Australia"
   },
-  "affiliationNotice": "Dragon Copilot, Dragon Medical One and Microsoft are trademarks of Microsoft Corporation. This site is published by Voice Recognition Australia, an authorised Dragon reseller in Australia. It is an independent reference resource and is not published by Microsoft.",
+  "affiliationNotice": "Dragon Copilot, Dragon Medical One and Microsoft are trademarks of Microsoft Corporation. This site is published by Voice Recognition Australia, a registered authorised reseller of Dragon products in Australia. It is not published by, endorsed by or affiliated with Microsoft.",
   "editorialNotice": "Information on this site is drawn from published vendor and regulatory documentation. Product capability, availability and licensing terms may change without notice. Verify current details with the vendor or with Voice Recognition Australia before making a purchasing decision.",
   "form": {
-    "formId": "CHANGE_ME",
-    "orUuid": "CHANGE_ME",
-    "submitText": "Request current information"
+    "formId": "307",
+    "orUuid": "a93b6c20-deb6-469a-bef6-bc16e510c99d",
+    "submitText": "Request Information",
+    "cfields": {
+      "21": "number_of_users",
+      "35": "company",
+      "18": "comments_about_your_needs"
+    }
   },
   "colours": {
     "primary": "#702573",
@@ -25,6 +30,7 @@
     "primaryLight": "#E3BEE4",
     "ink": "#17253D",
     "link": "#0067B8",
+    "accent": "#77BD43",
     "background": "#FEFEFE",
     "surface": "#F6F1EE",
     "surfaceAlt": "#F2F2F2",
@@ -38,15 +44,15 @@
   "hubs": [
     {
       "slug": "product",
-      "title": "Product & Licensing",
-      "blurb": "What Dragon Copilot is, how it is licensed, and how the options differ.",
+      "title": "Dragon Copilot",
+      "blurb": "What Dragon Copilot is, what it does in a consultation, and how it is licensed.",
       "image": "dragoncopilot/2026/08/25/dragon-copilot-licensing-practice-manager-paperwork-review-1ae88dd1.jpg",
       "imageAlt": "A practice manager and a colleague reviewing a printed licensing plan at a desk"
     },
     {
-      "slug": "australia",
-      "title": "Australia",
-      "blurb": "Availability, data residency, EMR integration and the Australian health sector picture.",
+      "slug": "dragon-medical-one",
+      "title": "Dragon Medical One",
+      "blurb": "Available in Australia today, on Australian infrastructure. What it does and how it is licensed.",
       "image": "dragoncopilot/2026/08/25/dragon-copilot-australia-gp-practice-team-consultation-651425ed.jpg",
       "imageAlt": "An Australian GP and practice manager reviewing a printed list at a clinic reception"
     },
