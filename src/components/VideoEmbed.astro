@@ -1,0 +1,59 @@
+---
+// Click-to-play YouTube facade. No iframe, no YouTube JS, until the user clicks —
+// keeps the page fully servable without JS (AEO requirement) while still offering video.
+interface Props {
+  youtubeId: string;
+  title: string;
+  caption?: string;
+}
+const { youtubeId, title, caption } = Astro.props as Props;
+const thumb = `https://i.ytimg.com/vi/${youtubeId}/hqdefault.jpg`;
+---
+<figure class="video-embed">
+  <button
+    type="button"
+    class="video-embed__facade"
+    data-youtube-id={youtubeId}
+    aria-label={`Play video: ${title}`}
+    style={`background-image:url(${thumb})`}
+  >
+    <span class="video-embed__play" aria-hidden="true">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+    </span>
+  </button>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>
+
+<style is:inline>
+  .video-embed{margin:24px 0;max-width:none}
+  .video-embed__facade{
+    display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:8px;cursor:pointer;
+    background-size:cover;background-position:center;position:relative;padding:0;
+  }
+  .video-embed__facade::after{
+    content:"";position:absolute;inset:0;border-radius:8px;
+    background:rgba(0,0,0,.15);transition:background .15s;
+  }
+  .video-embed__facade:hover::after{background:rgba(0,0,0,.3)}
+  .video-embed__play{
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1;
+    width:64px;height:64px;border-radius:50%;background:rgba(0,0,0,.65);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .video-embed iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:8px;display:block}
+  .video-embed figcaption{font-size:.85rem;color:var(--muted);margin-top:8px}
+</style>
+
+<script is:inline>
+  document.addEventListener('click', function (e) {
+    const btn = e.target.closest('.video-embed__facade');
+    if (!btn) return;
+    const id = btn.getAttribute('data-youtube-id');
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1`;
+    iframe.title = btn.getAttribute('aria-label') || 'YouTube video';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    btn.replaceWith(iframe);
+  });
+</script>

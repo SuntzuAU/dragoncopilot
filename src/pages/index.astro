@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import AnswerBlock from '../components/AnswerBlock.astro';
 import R2Image from '../components/R2Image.astro';
 import ACForm from '../components/ACForm.astro';
+import VideoEmbed from '../components/VideoEmbed.astro';
 import site from '../site.config.json';
 const c = site.colours;
 
@@ -69,6 +70,12 @@ const schema = [{
         questions drawn from trusted medical sources.</p>
       </div>
     </div>
+
+    <VideoEmbed
+      youtubeId="VYNz_VUoMZQ"
+      title="Introducing Microsoft Dragon Copilot"
+      caption="Introducing Microsoft Dragon Copilot — a two-minute overview from Microsoft."
+    />
 
     <section style={`background:${c.surface};border-radius:8px;padding:30px;margin:44px 0`}>
       <h2 style="margin-top:0">Available in Australia today: Dragon Medical One</h2>

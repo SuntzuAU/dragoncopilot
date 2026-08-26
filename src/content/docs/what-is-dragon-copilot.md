@@ -23,6 +23,10 @@ internalLinks:
     anchor: "Dragon Medical One in Australia"
   - to: "/compliance/"
     anchor: "how Dragon Copilot handles patient data"
+externalLinks:
+  - to: "youtube.com"
+    anchor: "Watch: Improve your experience with Dragon Copilot (33 min, Microsoft)"
+    url: "https://www.youtube.com/watch?v=932EF_rCUu4"
 related: ["dragon-copilot-vs-dragon-medical-one", "what-is-dragon-medical-one", "will-dragon-medical-one-be-replaced-by-dragon-copilot"]
 ---
 
@@ -74,6 +78,18 @@ systems transitioning across from Dragon Medical One.
 Because licensing terms, tiers and availability change and are not all published, the sensible step is to
 get the current position for your organisation rather than working from a page. Ask us and we will confirm
 it.
+
+## See it in a real consultation
+
+Microsoft has published a 33-minute walkthrough with clinicians and patient examples, covering the
+ambient documentation workflow end to end. Worth the time if you are evaluating this for your
+organisation rather than just getting the gist.
+
+<div class="video-cta">
+
+[Watch: Improve your experience with Dragon Copilot (33 min, Microsoft)](https://www.youtube.com/watch?v=932EF_rCUu4)
+
+</div>
 
 ## Australian availability
 
