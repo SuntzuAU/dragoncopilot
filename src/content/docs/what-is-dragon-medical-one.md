@@ -8,6 +8,8 @@ verified: "2026-08-26"
 primaryKeyword: "Dragon Medical One"
 secondaryKeywords: ["what is Dragon Medical One", "Dragon Medical One Australia", "clinical speech recognition Australia", "medical dictation software Australia", "Dragon Medical One pricing"]
 order: 1
+heroImage: "dragoncopilot/2026/08/26/dragon-medical-one-doctor-dictating-headset-microphone-hero-564ba4da.jpg"
+heroImageAlt: "A doctor dictating into a headset microphone at a consulting room desk"
 faqs:
   - q: "How accurate is Dragon Medical One?"
     a: "It ships with a medical vocabulary spanning more than 90 specialties and subspecialties, so clinical terminology, drug names and abbreviations are recognised without training them first. Accuracy improves further as the software adapts to an individual clinician's voice and phrasing over time."

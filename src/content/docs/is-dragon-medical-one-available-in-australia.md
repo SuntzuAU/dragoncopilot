@@ -8,6 +8,10 @@ verified: "2026-08-25"
 primaryKeyword: "Dragon Medical One Australia"
 secondaryKeywords: ["is Dragon Medical One available in Australia", "Dragon Medical One Australian availability"]
 order: 10
+heroImage: "dragoncopilot/2026/08/26/dragon-medical-one-australia-gp-practice-consultation-v2-95808d3c.jpg"
+heroImageAlt: "An Australian GP talking with a colleague in a bright suburban general practice"
+breakImage1: "dragoncopilot/2026/08/26/dragon-medical-one-australia-hospital-clinicians-break-d0181aeb.jpg"
+breakImage1Alt: "Three hospital clinicians walking and talking along a bright hospital corridor"
 faqs:
   - q: "Is Dragon Copilot available in Australia too?"
     a: "Not yet. Dragon Copilot is coming to the Australian market, but Microsoft has not announced an Australian release date. Dragon Medical One is available here today. Register your interest with Voice Recognition Australia and we will contact you when Dragon Copilot is released in Australia."

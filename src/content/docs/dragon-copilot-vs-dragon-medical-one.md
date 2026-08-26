@@ -8,6 +8,8 @@ verified: "2026-08-25"
 primaryKeyword: "Dragon Copilot vs Dragon Medical One"
 secondaryKeywords: ["difference between Dragon Copilot and Dragon Medical One", "Dragon Medical One or Dragon Copilot"]
 order: 30
+heroImage: "dragoncopilot/2026/08/26/dragon-copilot-vs-dragon-medical-one-clinicians-comparing-he-654a2379.jpg"
+heroImageAlt: "Two doctors comparing printed documents at a clinic desk"
 faqs:
   - q: "Is Dragon Copilot just Dragon Medical One with AI added?"
     a: "That is close but understates it. Dragon Copilot unifies two previously separate products: Dragon Medical One for front-end dictation and DAX Copilot for ambient clinical documentation. It is a merger of two capability sets into one application, not a feature bolted onto dictation."

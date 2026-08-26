@@ -8,6 +8,8 @@ verified: "2026-08-26"
 primaryKeyword: "Dragon Copilot privacy security"
 secondaryKeywords: ["Dragon Copilot data retention", "Dragon Copilot patient data", "Dragon Copilot encryption", "is Dragon Copilot secure"]
 order: 10
+heroImage: "dragoncopilot/2026/08/26/dragon-copilot-privacy-consent-doctor-patient-conversation-v-0da5749c.jpg"
+heroImageAlt: "A doctor explaining something to an older patient across a consulting room desk"
 faqs:
   - q: "Does Microsoft train its AI models on my patients' data?"
     a: "Microsoft states that Dragon Copilot's AI models are trained solely on anonymised data. Selected customer data — audio, transcripts, clinical documentation and clinician corrections — is transmitted to a research environment where it is anonymised within 90 days of capture. Microsoft states this anonymisation meets the HIPAA de-identification standard and the GDPR anonymisation standard."

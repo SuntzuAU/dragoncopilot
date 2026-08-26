@@ -8,6 +8,8 @@ verified: "2026-08-26"
 primaryKeyword: "Microsoft Dragon Copilot"
 secondaryKeywords: ["what is Dragon Copilot", "Dragon Copilot Australia", "ambient clinical documentation", "AI medical scribe Australia", "Dragon Copilot features"]
 order: 1
+heroImage: "dragoncopilot/2026/08/26/what-is-dragon-copilot-doctor-patient-consultation-hero-1c6b3937.jpg"
+heroImageAlt: "A doctor listening attentively to an older patient during a consultation"
 faqs:
   - q: "Is Dragon Copilot available in Australia?"
     a: "Dragon Copilot is coming to the Australian market. Microsoft has not announced an Australian release date. Dragon Medical One is available in Australia today and Microsoft publishes a migration path from it to Dragon Copilot. Register your interest with Voice Recognition Australia and we will contact you when Dragon Copilot is released here."

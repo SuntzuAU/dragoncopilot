@@ -8,6 +8,10 @@ verified: "2026-08-25"
 primaryKeyword: "Dragon Medical One end of life"
 secondaryKeywords: ["is Dragon Medical One being discontinued", "Dragon Medical One replaced by Dragon Copilot"]
 order: 40
+heroImage: "dragoncopilot/2026/08/26/dragon-medical-one-continuity-senior-doctor-clinic-v2-b8871f20.jpg"
+heroImageAlt: "A senior doctor standing by a clinic window holding a printed document"
+breakImage1: "dragoncopilot/2026/08/26/dragon-medical-one-continuity-hospital-team-handover-break-bfde6972.jpg"
+breakImage1Alt: "Hospital clinicians talking together at a ward station during handover"
 faqs:
   - q: "Has Microsoft published an end-of-life date for Dragon Medical One?"
     a: "No such announcement was located in the sources reviewed as at 25 August 2026. Microsoft continues to publish Dragon Medical One documentation and runs an Australian and New Zealand learning series for the product. Absence of an announcement is not a guarantee of longevity, but it is the current published position."

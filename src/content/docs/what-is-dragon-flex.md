@@ -8,6 +8,10 @@ verified: "2026-08-25"
 primaryKeyword: "Dragon Flex"
 secondaryKeywords: ["Dragon Copilot Flex", "Dragon Copilot licensing options"]
 order: 20
+heroImage: "dragoncopilot/2026/08/26/dragon-flex-licensing-practice-manager-clinic-office-v2-b1090593.jpg"
+heroImageAlt: "A practice manager reviewing a printed plan comparison at an office desk"
+breakImage1: "dragoncopilot/2026/08/26/dragon-flex-clinicians-discussing-subscription-options-break-04ea4b5c.jpg"
+breakImage1Alt: "Two doctors and a practice manager talking in a clinic corridor"
 faqs:
   - q: "Is Dragon Flex the same as Dragon Copilot?"
     a: "Dragon Flex is a way of licensing Dragon Copilot, not a different product. A clinician on a Flex licence and a clinician on a Per User licence are using the same Dragon Copilot application; what differs is how the AI usage is paid for."
